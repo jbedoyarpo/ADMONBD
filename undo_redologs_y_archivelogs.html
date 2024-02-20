@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>UNDO, REDOLOGS y ARCHIVELOGS | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-42"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li class="current-page-parent"><a href="backups.html" class="current-page-parent daddy">BACKUPS</a>
+   <ul>
+      <li id="active"><a href="undo_redologs_y_archivelogs.html" class="active no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="backups.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="rman.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">UNDO, REDOLOGS y ARCHIVELOGS</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id33">
+<div class="iDevice emphasis0" >
+<div id="ta33_113_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">UNDO</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En alguna parte, Oracle guarda los datos "viejos" (o de undo) cuando se realiza algún cambio en la base de datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si la transacción hace commit, estos datos "viejos" ya no sirven para nada. Si se hace un rollback, se deben restaurar estos datos "viejos".</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Estos datos "viejos" se guardan hasta que la transacción termine, de una forma u otra.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">ESte mecanismo de undo se utiliza para:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Poder hacer rollback de los cambios.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para mantener consistencia en lectura.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para hacerle recovery a transacciones que no han terminado bien (bloqueo del servidor, interrupción de energía eléctrica, etc.).</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para dar soporte a la funcionalidad de Flashback de Oracle.</span></li>
+</ul>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img0.2.png" width="527" height="225" alt="undo" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Gráficamente, lo podemos pensar de la siguiente manera: Ante un UPDATE hecho, los datos nuevos y viejos van a dar al SGA y al REDOLOG, pero solamente los datos viejos caen al TABLESPACE UNDO.</span></p>
+<p><span style="font-size: 12pt;">Por qué tener tantos sitios donde guardar los datos, en forma repetida? Téngamos en cuenta que el SGA es memoria RAM y, por lo tanto, se puede perder ante, por ejemplo, una interrupción eléctrica. En cambio, el UNDO es un tablespace, es decir, disco duro.</span></p>
+<p><span style="font-size: 12pt;">Estos datos viejos se guardan, en el tablespace UNDO, en un sitio llamado Segmento de UNDO.</span></p>
+<p><span style="font-size: 12pt;">Hay que recordar que, por instancia, solo puede haber un tablespace UNDO activo.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img1.3.png" width="527" height="323" alt="consistencia" /></td>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para entender un poco lo que significa la consistencia en lectura, analicemos la imagen mostrada. Supongamos que hay una transacción que, a las 10:30 a.m., ejecuta un SELECT "grande", es decir, que hace ordenaciones, agrupamientos, selecciona muchos datos, etc. Y ese SELECT grande, en algún momento de su ejecución, debe acceder a un "4" que hay en el disco. Diez minutos mas tarde, 10:40 a.m., aún sin haber terminado de ejecutarse el SELECT grande, hay otra transacción que hace un UPDATE y cambia el "4" por un "5". En este caso, el "4" se almacena en el tablespace UNDO, y el "5" queda en el disco.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img2.3.png" width="517" height="367" alt="cons1" /></td>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">El problema en este caso es que el SELECT grande va a encontrar un dato ya actualizado, el "5", cuando en realidad él necesitaba el "4".</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Este SELECT grande detecta que el dato que necesita ha sido cambiado y, por lo tanto, hace la búsqueda de dicho dato en el tablespace UNDO. Por eso es importante el tablespace UNDO para la consistencia en lectura.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Por algunos parámetros de configuración, es posible que cuando el SELECT grande busque el "4" en el UNDO, éste ya no exista. Esta situación es la que se conoce como error de Snapshot too old.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En versiones "antiguas" de Oracle, el UNDO se llamaba rollback segments, la cual se debía </span><span style="font-family: verdana, geneva, sans-serif;">configurar en forma manual.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En versiones recientes, se ha implementado el AUTO UNDO MANAGEMENT, que utiliza UNDO segments. </span><span style="font-family: verdana, geneva, sans-serif;">Es una gestión automática de Oracle de los segmentos UNDO.</span><br /><span style="font-family: verdana, geneva, sans-serif;">Lo ideal es no tocar absolutamente nada del manejo de los segmentos UNDO, los cuales están en el </span><span style="font-family: verdana, geneva, sans-serif;">tablespace del mismo nombre.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a mirar, a continuación, cómo está implementado la sección UNDO dentro de Oracle.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><span style="font-family: Encode Sans, Arial, Helvetica, sans-serif;"><span style="font-size: 16.8px;"><img src="img3.4.png" width="394" height="286" alt="show" /></span></span></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-family: verdana, geneva, sans-serif;"><span style="font-family: Encode Sans, Arial, Helvetica, sans-serif;"><span style="font-size: 16.8px;">Primero, consultemos los parámetros que tengan que ver con el UNDO.</span></span></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><span style="font-family: Encode Sans, Arial, Helvetica, sans-serif;"><span style="font-size: 16.8px;">El parámetro undo_management está en AUTO, queriendo decir que  la gestión del UNDO es automática.</span></span></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><span style="font-family: Encode Sans, Arial, Helvetica, sans-serif;"><span style="font-size: 16.8px;">El parámetro undo_retention, el cual está dado en segundos, dice el tiempo mínimo que permanece el dato UNDO grabado en dicho segmento. En este caso, mínimo 15 minutos (900 segundos) despues del COMMIT, permanece el dato UNDO. Esto no significa que a los 15 minutos, automáticamente el dato UNDO se borre. Solo se borra si Oracle ve la necesidad de reutilizar el espacio.</span></span></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><span style="font-family: Encode Sans, Arial, Helvetica, sans-serif;"><span style="font-size: 16.8px;">Y el parámetro undo_tablespace dice cómo se llama el tablespace UNDO activo. En Oracle, pueden haber varios tablespace UNDO, pero solo puede haber uno activo.</span></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img4.4.png" width="527" height="80" alt="TBS" /><span style="font-family: Encode Sans, Arial, Helvetica, sans-serif;"><span style="font-size: 16.8px;"><br /></span></span></td>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><span style="font-family: Encode Sans, Arial, Helvetica, sans-serif;"><span style="font-size: 16.8px;"><span style="font-family: verdana, geneva, sans-serif;">Si se necesita ver los tablespaces de UNDO que se tienen, se puede ejecutar la instrucción siguiente.</span><br /></span></span></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><span style="font-family: Encode Sans, Arial, Helvetica, sans-serif;"><span style="font-size: 16.8px;"><span style="font-family: verdana, geneva, sans-serif;">Como se puede observar, el tablespace se llama UNDOTBS1, tiene un tamaño de bloque de 8192 bytes (default), el máximo tamaño de ese tablespace es 2 Gigas aproximadamente (MAX_SIZE), está en estado ONLINE y su tipo de contenido es datos UNDO.</span></span></span></span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img5.3.png" width="527" height="94" alt="DATA" /></td>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><span style="font-family: Encode Sans, Arial, Helvetica, sans-serif;"><span style="font-size: 16.8px;"><span style="font-family: verdana, geneva, sans-serif;">Y si queremos mirar los data files asociados a dicho tablespace, nos damos cuenta que solo tiene un data file. Por defecto, el tablespace se llama UNDOTBS1 y lo asocia a un data file llamado undotbs1.dbf.</span></span></span></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;">Ahora miremos un poco, a través de un ejemplo de una transacción, donde quedan grabados sus datos de UNDO.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img6.2.png" width="527" height="372" alt="TX" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Se crea una tabla y luego se le inserta una tupla. Al hacer el INSERT, se activa una transacción.</span></td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img7.2.png" width="527" height="138" alt="TX1" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Para comprobar que existe una transacción activa, podemos consultar la vista V$TRANSACTION. </span></p>
+<p><span style="font-size: 12pt;">En el resultado podemos observar una serie de datos muy técnicos, pero uno de los que nos interesa está en la columna UBAFIL. En dicha columna aparece un 4. Esto quiere decir que esta transacción está guardando los datos UNDO en el data file No. 4, asociado al tablespace UNDO. Como podemos ver en las imágenes anteriores, donde consultamos los Data Files de dicho tablespace, nos damos cuenta que el único Data File asociado tiene el FileId 4.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img8.2.png" width="527" height="205" alt="COMMIT" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Cuando hacemos un COMMIT, es decir, damos por terminada la transacción, ya no existe nada en V$TRANSACTION.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora abordemos cómo se puede crear un nuevo tablespace UNDO y cómo decir que se utilice dicho tablespace.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img9.2.png" width="527" height="202" alt="TBSUNDO" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Podemos crear un nuevo tablespace UNDO con el comando mostrado. Nótese que hay que poner la palabra UNDO, y es importante dejarle a Oracle la gestión automática del espacio de dicho tablespace. Esto se logra con la cláusula AUTOEXTEND y el MAXSIZE. El tamaño inicial del tablespace son 100 megas, cuando éste se llene, creazca otros 10 megas, y acepte un tamaño máximo del tablespace de 250 megas.</span></td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img10.1.png" width="527" height="87" alt="tbs" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Si hacemos la consulta de los tablespaces UNDO que existen, ya aparecen dos, incluido el recien creado tablespace UNDOTBS2.</span></td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img11.1.png" width="399" height="335" alt="para" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Pero si miramos con SHOW PARAMETER, el tablespace que sigue activo por defecto es el tablespace UNDOTBS1.</span></p>
+<p><span style="font-size: 12pt;">Cómo cambiar el tablespace por defecto?</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><span style="font-size: 12pt;"><img src="img12.1.png" width="527" height="273" alt="CAMBIAR" /></span></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Se ejecuta el ALTER SYSTEM mostrado, en el cual se le cambia el valor al parametro UNDO_TABLESPACE. Y con el SCOPE=BOTH estamos asegurando que dicho cambio quede grabado tanto en la instancia como en el SPFILE.</span></p>
+<p><span style="font-size: 12pt;">Como podemos mirar, el tablespace que ya esta por defecto es el UNDOTBS2.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img13.1.png" width="527" height="157" alt="NUEVA" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Ahora, activemos una nueva transaccion. Y nos damos cuenta que los datos UNDO están siendo grabados en el UBAFIL 32...... </span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img14.1.png" width="527" height="129" alt="nuevo" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">....el cual corresponde al FileID del nuevo tablespace. Es la muestra de que ya los datos UNDO están siendo grabado sen el nuevo tablespace, el que se configuró por defecto.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;">A continuación, se mira un poco más en detalle el tema del tiempo de retención de los datos UNDO. En realidad, este tiempo de retención solo tiene sentido si configuramos la gestión automática del tablespace UNDO, tal y como se hizo anteriormente.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img15.1.png" width="437" height="281" alt="para" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Podemos observar que el parametro UNDO_RETENTION está configurado en 900 segundos, es decir, 15 minutos.</span></td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img16.1.png" width="517" height="329" alt="MILOCHO" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Para modificar dicho parámetro, ejecutamos el comando mostrado.</span></p>
+<p><span style="font-size: 12pt;">Podemos observar que el valor del parámetro ha sido cambiado por 1800, es decir, 30 minutos. Esto se hace con el comando ALTER SYSTEM.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img17.1.png" width="527" height="157" alt="GARANTIA" /></td>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si queremos garantizar que el tiempo de retención se cumpla, es decir, que el dato UNDO se quedé grabado como mínimo ese tiempo, podemos ejecutar el siguiente comando.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">En general, para Oracle es más importante las transacciones de UPDATES que simples SELECTS. Pero si necesitamos, por ejemplo, darle prioridad a la consistencia en lectura, podemos configurar el tiempo de retención garantizado, tal y como se hizo acá con la cláusula RETENTION GUARANTEE.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, se hacen unas consultas útiles sobre ciertas vistas que almacenan información del UNDO.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img18.1.png" width="527" height="267" alt="segmentos" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">En la vista denominada DBA_ROLLBACK_SEGS podemos observar datos referentes a los segmentos de UNDO creados. Recordar que un tablespace se compone de uno a mas segmentos.</span></p>
+<p><span style="font-size: 12pt;">En este caso, el tablespace UNDOTBS2 ya tiene diez segmentos.</span></p>
+<p><span style="font-size: 12pt;">A partir de esta consulta, podemos mirar si la cantidad de segmentos de un tablespace UNDO crece o decrece, dando a entender que dicho tablespace también crece o decrece.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img19.1.png" width="527" height="354" alt="OTRAS" /></td>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Otras vistas interesantes, aunque muy técnicas, son las que aparecen en la imagen.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Vale la pena recordar que un segmento se compone de una o más extensiones, lo cual se refleja en la consulta que se le hace a DBA_UNDO_EXTENTS.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Como se puede observar, el segmento llamado SYSSMU20 104.... tiene asociados 12 extents, numerados del 0 al 11 (EXTENT_ID).</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para borrar un tablespace UNDO, es igual que borrar cualquier otro tablespace. A continuación se muestra el comando.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img20.1.png" width="527" height="248" alt="error" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Si tratamos de borrar el tablespace que está activo por defecto, saca el error meostrado.</span></p>
+<p><span style="font-size: 12pt;">Solo se pueden borrar tablespaces que no estén activos por default, y el comando es el que se muestra.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;"><strong>REDO LOGS</strong></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Son dos o más archivos preasignados que almacenan todos los cambios realizados en la base de datos, a medida que se producen.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Los Redo Logs sirven para recuperar la base de datos, en caso de un fallo de instancia.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La recuperación de la base de datos se hace en dos fases diferentes: las transacciones que ya estaban "commiteadas", se graban definitivamente en el data file. Y las transacciones que no estaban "commiteadas", se les hace el rollback, utilizando los segmentos de UNDO.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, se detalla un poco en el funcionamiento de los Redo Logs Files.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Vamos a suponer que tenemos tres Redo Log Files asociados. El proceso background LGWR empieza a grabar en el Redo Log File 1. En este momento, dicho Redo Log File se encuentra en estado Current, y los otros dos en estado Inactive.</span></p>
+<p></p>
+</td>
+<td style="width: 50%;"><img src="img21.1.png" width="492" height="358" alt="anillo" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Cuando el Redo Log File 1 se llena, se produce lo que se denomina un Log Switch. En el Log Switch, el Redo Log File 1 queda en estado Active, el Redo Log File 2 es el Current, y el Redo Log File sigue inactivo. También, en un Log Switch, todo lo del Redo Log File 1 se sincroniza con el Data Buffer, y luego se baja el Data Buffer a los Data Files.</span></p>
+</td>
+<td style="width: 50%;"><img src="img22.1.png" width="527" height="263" alt="anillo2" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Los Redo Log Files se comportan como un anillo. Cuando el Redo Log File 2 se llena, se pasa a estado Active y el Redo Log File 3 pasa a ser el Current.</span></p>
+</td>
+<td style="width: 50%;"><img src="img23.1.png" width="527" height="258" alt="anillo3" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Y cuando el Redo Log File 3 se llena, vuelve y empieza a llenar el Redo Log File 1.</span></p>
+</td>
+<td style="width: 50%;"><img src="img24.1.png" width="527" height="263" alt="anillo4" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Es importante entender que los Redo Log Files existen, no solamente para poder recuperar a la base de datos en caso de falla de instancia, sino para regular la grabación en los Data Files. Tanto los Redo Log Files como los Data Files son disco duro, y sabemos que la escritura en disco en costosa. Pero la grabación en los Redo Log Files es menos costosa, porque se hace una grabación secuencial de datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a mirar cómo es el funcionamiento de los Redo Log Files.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Con la vista V$LOG, podemos mirar la información de los Redo Log Files. Como se puede observar, se tienen 3 Redo Log Files.</span></p>
+<p><span style="font-size: 12pt;">La columna SEQUENCE# corresponde a un consecutivo interno que tiene cada Redo Log File, cada Redo Log File mide 209 megas aproximadamente, y el Redo Log File que está actualmente en Current es el 3, los otros dos Redo Log Files están inactivos.</span></p>
+<p><span style="font-size: 12pt;">También podemos observar que el SCN (System Change Number) final de un Redo Log File (Next Change #) es el SCN inicial del siguiente Redo Log File (First Change #).</span></p>
+<p><span style="font-size: 12pt;">Es importante mencionar que para que el efecto de anillo se produzca, el siguiente Redo Log File a ser usado debe estar inactivo, no puede estar activo (no se ha terminado de sincronizar con el Data Buffer) y/o Current.</span></p>
+</td>
+<td style="width: 50%;"><img src="img25.1.png" width="527" height="89" alt="redo" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Si queremos mirar los datos de los Redo LOg Files físicos, usamos la vista V$LOGFILE.</span></p>
+</td>
+<td style="width: 50%;"><img src="img26.1.png" width="527" height="102" alt="FILES" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Ahora, vamos a forzar un LOG SWITCH para ver el funcionamiento en anillo. Esto se hace con el comando mostrado.</span></p>
+<p><span style="font-size: 12pt;">Como se puede observar, el Redo Log File 1 ahora es el Current, y el Redo Log File 3 queda activo, sincronizándose con el Data Buffer. Cuando el Redo Log File 3 termina su sincronización con el Data Buffer, pasa a estado Inactive.</span></p>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%;"><img src="img27.1.png" width="527" height="190" alt="switch" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Normalmente, este comando SWITCH LOGFILE no se usa. Oracle gestiona el LOG SWITCH automáticamente, cuando un Redo Log File se llena. Para efectos académicos, lo usamos para mirar el funcionamiento en anillo.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, vamos a mirar cómo se multiplexan (se graba un espejo) los Redo Log Files. Esto se hace agregando un miembro a cada grupo. Como podemos ver en las imagenes anteriores, cada Redo Log File pertenece a un grupo distinto (GROUP #), y cada grupo tiene un solo miembro (MEMBERS). Lo ideal es que cada grupo de Redo Log Files tenga dos miembros. Esto con el fin de asegurar disponibilidad de estos Redo Log Files, en caso de fallos de uno de ellos.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Con el comando mostrado, puedo agregarle un miembro a cada uno de los 3 grupos de Redo Log Files que tenemos.</span></p>
+<p><span style="font-size: 12pt;">Observe que ahora, cada grupo tiene 2 miembros (MEMBERS).</span></p>
+<p><span style="font-size: 12pt;"></span></p>
+</td>
+<td style="width: 50%;"><img src="img28.1.png" width="527" height="145" alt="MIEMBRO" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Haciendo la consulta en V$LOGFILE, podemos observar que ya hay 6 Redo Log Files físicos.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Aparece los 3 nuevos Redo Log Files en estado INVALID. Esto no es problema. Simplemente, la próxima vez que ese Redo Log File se vuelva Current, dejará de estar INVALID.</span></p>
+</td>
+<td style="width: 50%;"><img src="img29.1.png" width="527" height="161" alt="MIEMBROS" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">En este momento tenemos Current el Redo Log File 2.</span></p>
+</td>
+<td style="width: 50%;"><img src="img30.1.png" width="527" height="177" alt="acgtivo" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si hacemos un LOG SWITCH, el Redo Log File 3 pasa a ser el Current. Y si miramos ahora los Redo Log Files, vemos que el nuevo Redo Log File del Grupo 3 dejó de estar en estado INVALID.</span></p>
+</td>
+<td style="width: 50%;"><img src="img31.1.png" width="527" height="159" alt="act" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Así como se pueden agregar miembros a un grupo, también se pueden adicionar nuevos grupos. Es lo que haremos a continuación.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">En la imagen, estamos creando un nuevo grupo de Redo Log Files, el 5, el cual tiene dos miembros, y cada miembro con un tamaño de 100 megas.</span></p>
+<p><span style="font-size: 12pt;">Podemos observar que el Redo Log File del grupo 5 está en estado UNUSED, ya que no ha sido usado por primera vez para almacenar datos REDO. Cuando el efecto de anillo llegue al grupo 5, cambia de estado.</span></p>
+</td>
+<td style="width: 50%;"><img src="img32.1.png" width="527" height="205" alt="nuevo" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si forzamos un LOG SWITCH, vemos que el Redo Log File del grupo 5, pasa de UNUSED a CURRENT.</span></p>
+</td>
+<td style="width: 50%;"><img src="img33.1.png" width="527" height="170" alt="SW" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Por otro lado, podemos observar que ya hay 8 Redo Log Files físicos, correspondientes a cuatro grupos, y cada grupo con dos miembros.</span></p>
+</td>
+<td style="width: 50%;"><img src="img34.png" width="527" height="178" alt="RF" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por otra parte, también podemos eliminar miembros de un grupo. Es lo que se va a mostrar a continuación.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Para hacer el ejercicio, vamos a mirar cual es el Redo Log File Current.</span></p>
+<p><span style="font-size: 12pt;">En este caso, es el Redo Log File del grupo 5.</span></p>
+</td>
+<td style="width: 50%;"><img src="img35.png" width="527" height="209" alt="grupo" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Vamos a tratar de borrar un miembro del grupo 5. Esto se hace con el comando ALTER DATABASE DROP LOGFILE MEMBER, y haciendo referencia  directamente al Redo Log File físico que se quiere borrar.</span></p>
+<p><span style="font-size: 12pt;">Podemos observar que genera un error. No se puede borrar un miembro del Redo Log File que está Current. Tiene lógica. No puede borrar un miembreo en el cual actualmente se le está grabando transacciones.</span></p>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%;"><img src="img36.png" width="527" height="224" alt="err" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Hagamos un LOG SWITCH para mirar que pasa. El Redo Log File 5 queda ACTIVE y el Redo Log File 1 es el CURRENT.</span></p>
+<p></p>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%;"><img src="img37.png" width="527" height="153" alt="LL" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Ahora, al intentar borrar el miembrO del grupo 5, no hay problema a pesar de que está ACTIVE. Oracle termina de hacer la sincronización de dicho grupo, y luego borra el miembro.</span>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%;"><img src="img38.png" width="527" height="241" alt="BORRO" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Podemos observar que ya hay 7 Redo Log Files físicos, y el grupo 5 solo tiene un Redo Log File, un miembro.</span><span style="font-size: 12pt;"><br /></span></td>
+<td style="width: 50%;"><img src="img39.png" width="527" height="196" alt="JSJSJ" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">También se puede ver consultando el V$LOG. El grupo 5 tiene un solo miembro, mientras que los otros tienen 2 miembros.</span><span style="font-size: 12pt;"><br /></span></td>
+<td style="width: 50%;"><img src="img40.png" width="527" height="146" alt="INACTIVE" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Qué sucede cuando tratamos de borrar el único miembro de un grupo? En este caso, para hacer el ejercicio, vamos a borrar al único miembro del grupo 5.</span></p>
+<p><span style="font-size: 12pt;">Cuando lo intentamos, saca error. Efectivamente, cada grupo debe tener mínimo un miembro.</span></p>
+</td>
+<td style="width: 50%;"><img src="img41.png" width="527" height="221" alt="MM" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En conclusión, al borrar un miembro de un grupo hay dos restricciones para hacerlo:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Que no sea un miembro del grupo CURRENT.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Que no sea el único / último miembro del grupo.</span></li>
+</ul>
+<p><span style="font-family: verdana, geneva, sans-serif;">Ahora, procedamos a borrar un grupo.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Para borrar el grupo 5, y todos sus miembros, ejecutamos el comando mostrado.</span></td>
+<td style="width: 50%;"><img src="img42.png" width="493" height="63" alt="DDD" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Como se puede observar a través de la vista V$LOG, ya no existe el grupo 5 de Redo Log Files.</span></td>
+<td style="width: 50%;"><img src="img43.png" width="527" height="193" alt="tyno" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Una última acotación: cuando borramos un miembro y/o un grupo, se hace un borrado lógico del mismo. Esto quiere decir que el archivo físico, en el sistema operativo, sigue existiendo. Hay que ir a la carpeta del sistema operativo, y hacer el borrado manual.</span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">ARCHIVELOG</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Una base de datos en Oracle puede estar en dos posibles estados:</span></p>
+<ul style="text-align: justify;">
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Archivelog</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">NoArchivelog</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Una buena manera de mostrar la importancia de esto es decir que una base de datos en producción que esté en estado NoArchivelog es un "suicidio".</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Con una base de datos en modo Archivelog, ante una falla, se puede recuperar la base de datos hasta el momento del fallo. En cambio, con un estado NoArchivelog, se podría recuperar alguna parte de la base de datos, perdiendo datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a mirar a continuación cuál es la diferencia entre estos dos estados.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 57.1357%; text-align: justify;">
+<p><span style="font-size: 12pt;">Vamos a suponer una base de datos, con dos Data Files, en estado NoArchivelog. Supongamos que a dicha base de datos se le hace backup completo el lunes a las 2:00 a.m.</span></p>
+<p><span style="font-size: 12pt;">Dicha base de datos tiene 3 Redo Log Files. Despues del backup, la base de datos sigue funcionando y se empieza a llenar el Redo Log File 1 con lo que trabajaron los usuarios entre las 2:00 a.m. y las 8:00 a.m. Cuando se llena este Redo Log File, se empieza a llenar el Redo Log File 2 y éste queda con lo trabajado entre las 8:00 a.m. y las 12:00 m. Cuando se llena el Redo Log File 2, se empieza a llenar el Redo Log File 3, el cual contiene lo trabajado entre las 12:00 m y las 2:00 p.m. En este momento, por lo del funcionamiento en anillo de los Redo Logs, vuelve y comienza a llenarse el Redo Log File 1</span></p>
+</td>
+<td style="width: 42.8643%;">|<img src="img44.png" width="616" height="313" alt="lll" /></td>
+</tr>
+<tr>
+<td style="width: 57.1357%; text-align: justify;">
+<p><span style="font-size: 12pt;">Debemos entender que lo que había en en Redo Log File 1 se sobreescribe y se pierde, aunque este Redo Log File ya ha sido sincronizado y bajado a los Data Files.</span></p>
+<p><span style="font-size: 12pt;">Vamos a suponer que después de las 2:00 p.m., cuando se está volviendo a llenar el Redo Log File 1, hay un fallo de los Data Files. Como lo del Redo Log File 1 se perdió, lo que hay en los otros Redo Log Files no sirve para nada, y por lo tanto, lo único que se puede recuperar es el backup hecho a las 2:00 a.m., perdiendo todo lo que se había hecho desde ese momento hasta el momento del fallo.</span></p>
+</td>
+<td style="width: 42.8643%;"><img src="img45.png" width="620" height="292" alt="hhh" /></td>
+</tr>
+<tr>
+<td style="width: 57.1357%; text-align: justify;">
+<p><span style="font-size: 12pt;">Ahora, vamos a suponer el mismo caso pero en una base de datos en estado ArchiveLog.</span></p>
+<p><span style="font-size: 12pt;">Una base de datos en ArchiveLog lo que hace es que cada que se llena un Redo Log File, graba lo que hay en él en un Archived Redo Log, en un archivo aparte.</span></p>
+</td>
+<td style="width: 42.8643%;"><img src="img46.png" width="665" height="282" alt="archived" /></td>
+</tr>
+<tr>
+<td style="width: 57.1357%; text-align: justify;">
+<p><span style="font-size: 12pt;">Si tenemos una falla en el mismo momento del ejemplo anterior, la base de datos va a poder ser restaurada exactamente hasta el momento del fallo.</span></p>
+<p><span style="font-size: 12pt;">La recuperacion se hace cogiendo el backup hecho a las 2:00 a.m., a dicho backup aplicándole todos los cambios almacenados en los Archived Redo Log, y aplicando al final los cambios hechos reflejados en el Redo Log File que estaba Current en el momento del fallo (Redo Log File 1).</span></p>
+</td>
+<td style="width: 42.8643%;"><img src="img47.png" width="655" height="307" alt="jjn" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora miremos algunos comandos útiles para el manejo del concepto de Archivelog.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Para saber si la base de datos está en modo Archivelog, ejecutamos el comando mostrado.</span></p>
+<p><span style="font-size: 12pt;">En la columna denominada LOG_MODE, vemos que la base de datos no tiene configurado el Archivelog.</span></p>
+</td>
+<td style="width: 50%;"><img src="img48.png" width="492" height="200" alt="comando" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Para poder configurar la base de datos en modo Archivelog, debemos primero configurar dos parámetros importantes:</span></p>
+<ul>
+<li><span style="font-size: 12pt;">El sitio donde van a ser grabados los archivelogs. En este ejemplo, configuramos dos de los archivelogs. El primero de ellos va a ser creado en la carpeta C:/TEMP/FRA. Y el segundo de ellos, va a ser creado en la carpeta que dice el parámetro DB_RECOVERY_FILE_DEST, que, en este caso, es en C:/FRA-ORACLE.</span></li>
+<li><span style="font-size: 12pt;">El formato del nombre de los archivelogs.</span></li>
+</ul>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%;"><img src="img49.png" width="878" height="382" alt="log" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Para cambiar la base de datos a modeo Archivelog, debemos hacer un shutdown a la instancia. Esto lo hacemos por SQL Plus.</span>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%;"><img src="img50.png" width="350" height="195" alt="shutdown" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Luego, vamos a arrancar la instancia en modo MOUNT.</span></td>
+<td style="width: 50%;"><img src="img51.png" width="422" height="180" alt="mount" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Estando en este modo (MOUNT), podemos verificar en qué estado se encuentra la base de datos. Podemos ver que el Archivelog está desactivado.</span></td>
+<td style="width: 50%;"><img src="img52.png" width="540" height="123" alt="ARCHIVE" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">El comando para cambiar al estado Archivelog es el que se muestra.</span></td>
+<td style="width: 50%;"><img src="img53.png" width="334" height="123" alt="ARCHIVELOG" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Luego, debemos abrir la base de datos para poder empezar a trabajar en modo Archivelog.</span></td>
+<td style="width: 50%;"><img src="img54.png" width="423" height="136" alt="OPEN" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Podemos verificar, de nuevo, que sí haya quedado en estado Archivelog.</span><span style="font-size: 12pt;"><br /></span></td>
+<td style="width: 50%;"><img src="img55.png" width="445" height="241" alt="lalla" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A partir de este momento, cada vez que se llene un Redo Log File, debe grabar un Archivelog. Para mirar que esto sí suceda, hagamos el siguiente ejercicio.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Para simular que un Redo Log File se llenó, hagamos un LOG SWITCH.</span></p>
+<p><span style="font-size: 12pt;"></span></p>
+</td>
+<td style="width: 50%;"><img src="img56.png" width="394" height="295" alt="SWITCH" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Podemos observar que en la carpeta en la cual configuramos el parámetro LOG_ARCHIVE_DEST_1, aparece ya un Archivelog, cuyo nombre tiene el formato dado en el parámetro LOG_ARCHIVE_FORMAT.</span></p>
+</td>
+<td style="width: 50%;"><img src="img57.png" width="640" height="151" alt="mirar" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si volvemos a hacer un LOG SWITCH, ya aparecen dos ARchivelogs.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">El segundo archivo generado es mucho más pequeño en tamaño, porque en el Archivelog se graba lo que se ha ocupado del Redo Log File.</span></p>
+</td>
+<td style="width: 50%;"><img src="img58.png" width="640" height="154" alt="log" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Es de aclarar que, de todas maneras, en la carpeta configurada con el parámetro DB_RECOVERY_FILE_DEST, la File Recovery Area, también se graban estos Archivelog, con nombres poco nemotécnicos. Nótese que los tamaños de los dos archivos en las dos carpetas son iguales.</span></p>
+</td>
+<td style="width: 50%;"><img src="img59.png" width="629" height="154" alt="fra" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"></span></p>
+<p></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"></span></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="backups.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="rman.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

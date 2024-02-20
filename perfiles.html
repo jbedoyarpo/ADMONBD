@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>PERFILES | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-28"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li class="current-page-parent"><a href="manejo_de_usuarios.html" class="current-page-parent daddy">MANEJO DE USUARIOS</a>
+   <ul>
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li id="active"><a href="perfiles.html" class="active no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="roles.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="diccionario_de_datos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">PERFILES</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id53">
+<div class="iDevice emphasis0" >
+<div id="ta53_109_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Un perfil es una manera que tiene Oracle de limitarle el uso de recursos a los usuarios.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Hay dos tipos de perfiles:</span></p>
+<ul style="text-align: justify;">
+<li><span style="font-family: verdana, geneva, sans-serif;">De recursos del sistema / base de datos: Limitar el uso de la CPU, tiempo de conexión, tiempo de inactividad, sesiones concurrentes, espacio consumido en la SGA, espacio de I/O, etc.</span></li>
+<li><span style="font-family: verdana, geneva, sans-serif;">De las cuentas y password del usuario: bloqueo de cuentas, expiración del password, periodo de gracia, histórico de password para evitar reutilizar passwords, gestión de complejidad del password, etc.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Es importante mencionar que cada usuario solo puede tener asignado un perfil. Y, además, cuando este perfil es cambiado, tiene efecto sobre los usuarios conectados cuando éstos se desconecten y se vuelvan a conectar.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Existe un perfil llamado DEFAULT que es el asignado inicialmente, por default, a todos los usuarios.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por defecto, la gestión de perfiles están desactivados. Esto debido a que controlarle los perfiles a los usuarios consume recursos del sistema. Para poder activar la gestión de perfiles, el parámetro RESOURCE_LIMIT debe estar en TRUE.</span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Parámetros de tipo KERNEL / del Sistema</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación se presentan algunos de los parámetros de tipo kernel más usados.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img2.19.png" width="846" height="396" alt="bcv" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Parámetros de tipo Password</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En la siguiente tabla se presentan algunos parámetros de tipo password que pueden ser configurados.</span></p>
+<p><strong><span style="font-family: verdana, geneva, sans-serif;"><img src="img3.19.png" style="display: block; margin-left: auto; margin-right: auto;" /></span></strong></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Perfil DEFAULT</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si queremos consultar la información de un perfil específico, podemos usar la vista DBA_PROFILES. En la imagen se puede observar que hay dos tipos de "perfiles" (RESOURCE_TYPE): KERNEL y PASSWORD. El valor actual de dicho parámetro está en la columna LIMIT. Los parámetros de recursos del sistema están UNLIMITED, mientras que los de password tienen algunos valores. Por ejemplo, FAILE_LOGIN_ATTEMPS está en 10, lo cual significa que el usuario  se puede equivocar al digitar su password hasta 10 veces, antes de que su cuenta sea bloqueada.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Consultando la vista V$SYSTEM_PARAMETER, puedo mirar si los perfiles están activados o no. Si queremos activar / desactivar la gestión de perfiles, podemos ejecutar el comando ALTER SYSTEM SET resource_limit = FALSE / TRUE.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img0.19.png" width="484" height="226" alt="UNC" /></td>
+<td style="width: 50%;"><img src="img1.20.png" width="417" height="161" alt="omc" /></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;"><strong>Cómo crear un perfil?</strong></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se crea con la instrucción CREATE PROFILE LIMIT, tal y como se ve a continuación. Se está creando un perfil llamado DESARROLLO, el cual tiene tres parámetros configurados. En este caso, el perfil DESARROLLO tiene configurados esos tres parámetros con esos valores, y los demás valores quedan configurados con el valor por default.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si miramos la vista DBA_PROFILES, vemos lo que se explicó anteriormente.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img4.19.png" width="405" height="246" alt="YBN" /></td>
+<td style="width: 50%;"><img src="img5.15.png" width="525" height="288" alt="YBCN" /></td>
+</tr>
+</tbody>
+</table>
+<p>Si en algún momento necesito adicionarle a un perfil ya existente la configuración de otro parámetro, lo hago con ALTER PROFILE LIMIT. Por ejemplo:</p>
+<table border="1" style="width: 100%; height: 261px;">
+<tbody>
+<tr style="height: 261px;">
+<td style="width: 50%; height: 261px;"><img src="img6.16.png" width="353" height="255" alt="NBC" /></td>
+<td style="width: 50%; height: 261px;"><img src="img7.15.png" width="460" height="239" alt="INB" /></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;"><strong>Funcionamiento de los límites de un perfil</strong></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a crear un nuevo usuario llamado DESA2, le vamos a asignar los roles CONNECT y RESOURCE. Para mirar qué perfil tiene asignado un usuario, podemos consultar la vista DBA_USERS. Podemos observar que su perfil es el DEFAULT.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img8.14.png" width="458" height="244" alt="TVG" /></td>
+<td style="width: 50%;"><img src="img9.13.png" width="334" height="193" alt="YBC" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para asignarle a un usuario un perfil diferente al DEFAULT, digitamos un ALTER USER. Le asignamos a DESA2 el perfil DESARROLLO, creado anteriormente. Y podemos observar que, efectivamente, dicho usuario queda con ese perfil.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img10.12.png" width="328" height="175" alt="UNC" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img11.12.png" width="314" height="177" alt="BCN" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Hagamos una prueba para mirar qué significa, por ejemplo, que el parámetro SESSIONS_PER_USER esté con valor de 1 en el perfil DESARROLLO.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos, por SQL Plus, a conectarnos con el usuario DESA2. NO genera problemas. Luego, en una segunda pantalla, trato de volverme a conectar con el mismo usuario, y aparece el error de que no se puede conectar a dos sesiones diferentes, el máximo número de sesiones concurrentes que puede tener el usuario es 1.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img12.11.png" width="371" height="263" alt="UNCÑ" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;">
+<p><img src="img13.11.png" width="424" height="151" alt="UNC" /></p>
+<p></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si me vuelvo a pasar para la ventana donde me dejó conectar con DESA2 (y luego de esperar más de 3 minutos), y ejecuto cualquier SELECT, genera un error de tiempo de inactividad. En el perfil DESARROLLO hay un parámetro llamado CONNECT_TIME que está en 3. Esto significa que el usuario DESA2 puede estar máximo conectado 3 minutos.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img14.10.png" width="399" height="65" alt="unc" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img15.9.png" width="492" height="181" alt="mnc" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora vamos a hacer un ensayo con un parámetro de tipo PASSWORD. Vamos a adicionarle al perfil DESARROLLO un nuevo parámetro. El parámetro corresponde al número máximo de equivocaciones que se pueden cometer al digitar el password, antes de que Oracle bloquee la cuenta.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img16.9.png" width="379" height="188" alt="ncb" /></td>
+<td style="width: 50%;"><img src="img18.8.png" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Cuando tratamos de conectarnos con el usuario DESA2 y nos equivocamos 3 veces al digitar el password, el mensaje que aparece es que la cuenta ha sido bloqueada. Esto debido a que el parametro FAILED_LOGIN_ATTEMPTS estaba en dos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si miramos el estado de la cuenta o usuario DESA2, a través de DBA_USERS, vemos que dicha cuenta se encuentra en estado LOCKED (TIMED). TIMED corresponde a que el la cuenta ha quedado bloqueada y está sujeta al tiempo que diga el parámetro PASSWORD_LOCK_TIME.</span></p>
+<p><img src="img17.8.png" width="686" height="426" alt="UNC" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Ahora, si desde SYS desbloqueamos la cuenta, vemos como el estado cambia a OPEN.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img19.8.png" width="405" height="184" alt="MNC" style="display: block; margin-left: auto; margin-right: auto;" /></span></td>
+<td style="width: 50%;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img20.7.png" width="401" height="209" alt="MNS" style="display: block; margin-left: auto; margin-right: auto;" /></span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Miremos un ejemplo con PASSWORD_LIFE_TIME. Consultemos el EXPIRY_DATE de l a cuenta DESA2. Vamos que está para expirar el 20 de mayo de 2023 (en el momento de escribir estas líneas es 21 de noviembre de 2022). Ahora, cambiemos el parámetro a 30. Cuando volvemos a consultar el EXPIRY_DATE del usuario DESA2, ya está en 21 de diciembre de 2022, 30 días despues de hoy.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img21.7.png" width="346" height="221" alt="imnc" /></td>
+<td style="width: 25%;"><img src="img22.6.png" width="334" height="166" alt="UNC" /></td>
+<td style="width: 25%;"><img src="img23.6.png" width="263" height="151" alt="imn" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="font-family: verdana, geneva, sans-serif;">Cómo borrar un perfil?</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para borrar un perfil, sucede lo mismo que al borrar un usuario. Miremos el ejemplo de borrar el perfil DESARROLLO. </span></p>
+<p><img src="img24.7.png" width="964" height="273" alt="MNC" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se puede observar que no deja borrar dicho perfil porque tiene usuarios asignados, a no ser que lo hagamos con la cláusula CASCADE. Si volvemos a mirar con qué perfil quedó el usuario DESA2, vemos que queda con el DEFAULT.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img25.5.png" width="408" height="184" alt="NNNC" /></td>
+<td style="width: 50%;"><img src="img26.5.png" width="429" height="234" alt="UMC" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Qué sucede si tratamos de borrar el perfil DEFAULT? No lo deja borrar ya que es un perfil predefinido por Oracle, está protegido.</span></p>
+<p><img src="img27.4.png" width="611" height="334" alt="ujn" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por último, debemos recordar que los perfiles son como los roles. Si hay algún cambio en un perfil, para que los usuarios "tomen" dicho cambio deben conectarse a una nueva sesión (salir y volver a entrar).</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Videos:</span></p>
+<p style="text-align: justify;"><strong><a href="https://youtu.be/QRlztJf44XM">Perfiles - Sistema</a></strong></p>
+<p style="text-align: justify;"><strong><a href="https://youtu.be/zPVspP_uhHk">Perfiles - Password</a></strong></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="roles.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="diccionario_de_datos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

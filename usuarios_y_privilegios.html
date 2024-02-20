@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>USUARIOS Y PRIVILEGIOS | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-25"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li class="current-page-parent"><a href="manejo_de_usuarios.html" class="current-page-parent daddy">MANEJO DE USUARIOS</a>
+   <ul>
+      <li id="active"><a href="usuarios_y_privilegios.html" class="active no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="manejo_de_usuarios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="roles.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">USUARIOS Y PRIVILEGIOS</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id51">
+<div class="iDevice emphasis0" >
+<div id="ta51_108_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En Oracle, USUARIO y ESQUEMA son dos conceptos que van muy ligados entre si, por no decir que son casi sinónimos. Esto debido a que el ESQUEMA es el conjunto de objetos (tablas, vistas, índices, etc.) que hay dentro de una base de datos, y el USUARIO es el propietario o dueño de dichos objetos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Inicialmente, el único usuario que puede crear usuarios es el administrador (SYS). Vamos a crear un nuevo usuario, en su forma básica. La instrucción CREATE USER exige incluir el nombre del usuario a crear (EJEMPLO) y, a través de la cláusula IDENTIFIED, se incluye cuál va a ser su password (1234).</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img0.17.png" width="515" height="162" alt="MNC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La instrucción CREATE USER tiene otras opciones, las cuales las vamos a ir abordando a medida que se desarrolla el tema.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, tratemos de conectarnos con el nuevo usuario. Intencionalmente, hagámoslo por SQL Plus, pero lo mismo sucedería por SQL Developer. A pesar de que digitamos correctamente el password del usuario (1234), saca el error mostrado. Hasta ahora, el usuario EJEMPLO está creado, pero no tiene permisos de hacer nada dentro de la base de datos, ni siquiera conectarse. Ese es el error generado.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img1.17.png" width="687" height="222" alt="MNC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A esos permisos que se le otorgan o quitan a un usuario para manipular objetos lógicos de la base de datos, tales como tablas, sesiones, índices, vistas, triggers, etc, se les conoce como PRIVILEGIOS.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img36.4.png" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Es decir, el usuario EJEMPLO no tiene el privilegio de conectarse a una sesión de la base de datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La instrucción para darle privilegios a un usuario sobre objetos de la base de datos es el GRANT. La manera como le podemos dar el privilegio de conectarse a la base de datos al usuario EJEMPLO es la siguiente. También se le podría dar el privilegio CONNECT y tendría el mismo efecto que CREATE SESSION.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img2.17.png" width="455" height="168" alt="UNC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La instrucción se entiende bien si se hace una traducción literal de la misma, del inglés al español. Significa "otorgar el privilegio (o permiso) de crear una sesión (conectarse a la base de datos) al usuario EJEMPLO".</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Luego de darle estos permisos, observamos que ya el usuario EJEMPLO se puede conectar a la base de datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img3.17.png" width="648" height="268" alt="CVB" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En el diccionario de datos de Oracle, podemos consultar información de los distintos usuarios existentes en la base de datos. Lo hacemos utilizando las vista ALL_USERS (o también, DBA_USERS, la cual da información más detallada). Lo podemos ver en la siguiente imagen. Ahí se puede ver la información del usuario EJEMPLO.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img23.5.png" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, desde el esquema del usuario EJEMPLO, vamos a crear una tabla. Hasta ahora, el único privilegio que tiene el usuario es de conectarse a la base de datos. </span></p>
+<p style="text-align: justify;"><img src="img4.17.png" width="390" height="206" alt="UND" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Aún no tiene permisos para crear tablas. Por lo tanto, desde el usuario administrador, vamos a darle ese privilegio.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, volvamos a intentar a crear la tabla en el esquema de EJEMPLO, y vemos que todo funciona perfectamente.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img5.13.png" width="438" height="161" alt="XD" /></td>
+<td style="width: 50%;"><img src="img6.14.png" width="488" height="153" alt="ynh" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora supongamos que el usuario EJEMPLO va a insertar tuplas en la tabla recién creada. El error generado dice que el usuario no tiene permisos para usar el tablespace USERS, el cual es el que se utiliza para grabar los datos de los usuarios. En realidad, lo que sucede es que el usuario no tiene una quota de almacenamiento en dicho tablespace. Por quota se entiende por espacio máximo de almacenamiento.</span></p>
+<p style="text-align: justify;"><img src="img7.13.png" width="703" height="109" alt="MNC" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos, entonces, desde SYS a darle una quota de almacenamiento al usuario un el tablespace USERS. Con la instrucción mostrada, le estamos asignando una quota máxima de 100 megas en el tablespace USERS. Es posible, también, darle una quota ilimitada al usuario. Eso se hace poniendo la palabra UNLIMITED donde se puso 100M.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, como se puede observar, el usuario puede insertar la tupla.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img8.12.png" /></td>
+<td style="width: 50%;"><img src="img9.11.png" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para mirar la información de las quotas que tienen los usuarios sobre los tablespaces, podemos consultar lo siguiente. Podemos observar que el usuario EJEMPLO tiene una quota (MAX_BYTES) de 100 megas sobre el tablespace USERS. Esta consulta es muy útil para saber un usuario dado cuánto ha ocupado dentro de un tablespace y, por lo tanto, cuánto espacio le queda disponible.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img25.4.png" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Otra manera de otorgarle a un usuario permisos para crear objetos en su esquema, teniendo ya quota asignada en el tablespace, es GRANT RESOURCE. </span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por otra parte, hay manera de asignarle a un usuario varios permisos a la vez. Esto se hace con la instrucción siguiente. Acá, al mismo tiempo, le estamos dando permisos para crear procedimientos y triggers al usuario EJEMPLO.</span></p>
+<p style="text-align: justify;"><img src="img10.10.png" width="700" height="154" alt="MNC" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para quitarle privilegios a un usuario, se usa la instrucción REVOKE. Vamos a quitarle al usuario EJEMPLO el privilegio de crear tablas. Ya, al usuario EJEMPLO, no lo deja crear tablas.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img11.10.png" width="448" height="145" alt="MN" /></td>
+<td style="width: 50%;"><img src="img12.9.png" width="407" height="203" alt="MN" /></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;">Por otra parte, vamos a hacer un ejemplo donde el usuario EJEMPLO le da privilegios a otro usuario para que manipule su tabla VEHICULO. Tener en cuenta que en estos momentos, la tabla VEHICULO tiene una sola tupla grabada.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Creemos un nuevo usuario llamado EJEMPLO2. Y le vamos a dar los privilegios iniciales correspondientes. Esto se hace desde SYS.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img13.9.png" width="511" height="262" alt="MNC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, estando conectados con el usuario recién creado, al intentar consultar la tabla VEHICULO del usuario EJEMPLO, saca error. No reconoce la tabla VEHICULO.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img14.8.png" width="471" height="189" alt="mn" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si el usuario dueño de la tabla, EJEMPLO, le otorga privilegios, vamos a ver qué sucede. El GRANT mostrado lo hace el usuario EJEMPLO y le da privilegios de hacer solamente SELECT en la tabla VEHICULO. Y el SELECT exitoso lo hace EJEMPLO2.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img15.7.png" width="462" height="183" alt="MN" /></td>
+<td style="width: 50%;"><img src="img16.7.png" width="422" height="218" alt="MNU" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">También podría suceder lo siguiente. Acá, el usuario EJEMPLO le está dando privilegios a EJEMPLO2 para insertar tuplas en la tabla VEHICULO.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img17.6.png" width="468" height="162" alt="MNJ" /></td>
+<td style="width: 50%;"><img src="img18.6.png" width="435" height="190" alt="RET" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora pongamos la siguiente situación. Supongamos que el usuario EJEMPLO2 le quiere dar privilegios a un tercer usuario, EJEMPLO3, de consultar la tabla VEHICULO del esquema de EJEMPLO. Como podemos observar, esta acción transitiva no es permitida en este caso, y por lo tanto saca el error mostrado.</span></p>
+<p><img src="img20.6.png" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para que transitivamente el usuario EJEMPLO2 le pueda dar privilegios a EJEMPLO3, para acceder a un objeto de EJEMPLO, éste último usuario le tuvo que haber dado al usuario EJEMPLO2 privilegios con la cláusula WITH GRANT OPTION. Ahora sí deja a EJEMPLO2 darle permisos a EJEMPLO3 de consultar la tabla VEHICULO.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img21.6.png" /></td>
+<td style="width: 50%;"><img src="img22.5.png" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por ejemplo, para darle privilegios a todos los usuarios de hacer SELECT sobre la table VEHICULO, EJEMPLO puede ejecutar la siguiente instrucción:</span></p>
+<p><img src="img19.6.png" width="631" height="213" alt="une" /></p>
+<p><strong><span style="font-family: verdana, geneva, sans-serif;">Otra opción de creación de usuarios</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">También podemos crear un usuario, no solamente indicando cuál va a ser su password, sino dando otras opciones importantes. Miremos el comando siguiente. Acá le estamos diciendo a Oracle que cree un usuario llamado EJEMPLO6, cuyo password es 1234. Además, que todos sus datos sean grabados en el tablespace T6, y que el tablespace temporal que va a utilizar dicho usuario es TEMP.</span></p>
+<p><strong><span style="font-family: verdana, geneva, sans-serif;"><img src="img24.6.png" width="725" height="87" alt="YBR" style="display: block; margin-left: auto; margin-right: auto;" /></span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Pregunta: Si ejecutamos el siguiente comando ALTER USER EJEMPLO QUOTA 5M ON T1 QUOTA 0 ON USERS, qué implicaciones tiene?</span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Estados de los Usuarios</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En algún momento, el administrador puede bloquear la cuenta de usuario. De esta manera, dicho usuario no podrá entrar a la base de datos. La manera de hacerlo es la siguiente:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img26.4.png" width="426" height="182" alt="UNC" /></td>
+<td style="width: 50%;"><img src="img27.3.png" width="559" height="239" alt="RV" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se puede observar que cuando el usuario trata de conectarse a la base de datos, le dice que la cuenta está bloqueada. Si queremos consultar el estado de una cuenta, podemos hacerle un SELECT a la vista DBA_USERS. En dicha consulta, nos damos cuenta que el usuario EJEMPLO está en estado LOCKED.</span></p>
+<p><img src="img28.3.png" width="981" height="144" alt="TBN" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si deseamos desbloquear la cuenta EJEMPLO, se ejecuta ALTER USER EJEMPLO ACCOUNT UNLOCK. De esta manera, la cuenta EJEMPLO ya queda en estado OPEN.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 45.3982%;"><img src="img29.3.png" width="455" height="162" alt="YBC" /></td>
+<td style="width: 51.8584%;"><img src="img30.3.png" width="504" height="200" alt="YBC" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Otro de los posibles estados de un usuario es EXPIRED. Eso significa que dicho usuario tiene su password expirado. Como administrador, puedo forzar a que un usuario cambie su password la próxima vez que se conecte. Esto lo hago con el comando siguiente.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img31.2.png" width="461" height="160" alt="UNC" /></td>
+<td style="width: 50%;"><img src="img32.2.png" width="490" height="233" alt="TG" /></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;">Si miramos su estado en DBA_USERS, encontramos:</span></p>
+<p><img src="img33.2.png" width="933" height="28" alt="inm" /></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><strong>Borrar Usuarios</strong></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para borrar un usuario que aún no ha creado objetos en su esquema, utilizamos el comando DROP USER. Por otra parte, para eliminar un usuario cuyo esquema ya tiene objetos, hay que agregarle a la instrucción anterior la cláusula CASCADE,</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img34.4.png" width="328" height="168" alt="TBC" /></td>
+<td style="width: 50%;"><img src="img35.4.png" width="359" height="170" alt="INV" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="font-family: verdana, geneva, sans-serif;">Privilegios ANY</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Los privilegios ANY corresponden a permisos que se le dan a un usuario para hacer acciones en CUALQUIER esquema, excepto en el de SYS. Miremos el siguiente ejemplo. Estando conectados en el usuario EJEMPLO2, vamos a tratar de crear una tabla en el esquema de EJEMPLO. Vemos que saca un error de privilegios insuficientes. Entonces, por SYS, vamos a darle el privilegio ANY al usuario EJEMPLO2 para crear tablas. De esta manera, cuando el usuario EJEMPLO2 vaya a crear la tabla T! en el esquema EJEMPLO, no hay problema.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img37.3.png" width="413" height="174" alt="UNV" /></td>
+<td style="width: 50%;"><img src="img38.2.png" width="446" height="167" alt="UNC" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Actividad . Qué harán las cláusulas GRANT UPDATE(Apellidos) ON ALUMNOS TO EJEMPLO2 ?  GRANT INSERT(Código, Nombre) ON ALUMNOS TO EJEMPLO2 ?</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Actividad. Al dar privilegios a un usuario, cuál es la diferencia entre WITH ADMIN OPTION y WITH GRANT OPTION?</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Actividad. Cuando se quitan permisos dados con WITH ADMIN OPTION, cuando se quitan estos permisos, NO se le quitan a todos los usuarios que los heredaron. Qué paso con WITH GRANT OPTION? Hacer la prueba.</span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Vistas sobre privilegios</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img39.2.png" width="830" height="396" alt="ybc" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img40.2.png" width="802" height="207" alt="tbc" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Videos:</span></p>
+<p style="text-align: justify;"><strong><a href="https://youtu.be/Wa9E80DusZA">Creación de Usuarios</a></strong></p>
+<p style="text-align: justify;"><strong><a href="https://youtu.be/uDQsh1JymIg">Borrado de Usuarios</a></strong></p>
+<p style="text-align: justify;"><strong><a href="https://youtu.be/Gqmbxk3P6G0">Otorgar Permisos - GRANT Básico</a></strong></p>
+<p style="text-align: justify;"><strong><a href="https://youtu.be/iJIllnk-Sek">Otorgar Permisos - Usuario Permiso a Otro</a></strong></p>
+<p style="text-align: justify;"><strong><a href="https://youtu.be/8atMK1vSbj0">Otorgar Permisos - With Admin Option</a></strong></p>
+<p style="text-align: justify;"><strong><a href="https://youtu.be/ldZOcaisQxo">Otorgar Permisos - Granularidad</a></strong></p>
+<p style="text-align: justify;"><strong><a href="https://youtu.be/-EpfZ0Yc2KU">Quitar Permisos</a></strong></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="manejo_de_usuarios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="roles.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

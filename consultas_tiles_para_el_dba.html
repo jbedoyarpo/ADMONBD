@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>CONSULTAS ÚTILES PARA EL DBA | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-55"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="diccionario_de_datos.html" class="current-page-parent daddy">DICCIONARIO DE DATOS</a>
+   <ul>
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li id="active"><a href="consultas_tiles_para_el_dba.html" class="active no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="ejercicio_completo.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="optimizacin_de_consultas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">CONSULTAS ÚTILES PARA EL DBA</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id57">
+<div class="iDevice emphasis0" >
+<div id="ta57_109_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Consultas útiles para el DBA</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La labor del DBA exige sacar provecho de la información que hay en el diccionario de datos. Generalmente, el DBA va construyendo una biblioteca de consultas útiles que le sirven para fines específicos. A continuación se muestran una serie de consultas útiles para la labor del DBA.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img1.23.png" /></td>
+<td style="width: 50%;"><img src="img1.23.png" width="489" height="397" alt="BVV" /></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img2.22.png" width="325" height="236" alt="MNC" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img3.22.png" width="441" height="227" alt="BVVV" /></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img4.22.png" width="454" height="311" alt="VBN" /></td>
+<td style="width: 50%;"><img src="img5.18.png" width="385" height="376" alt="VCB" /></td>
+</tr>
+</tbody>
+</table>
+<p><img src="img6.19.png" width="811" height="394" alt="MNN" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><img src="img7.18.png" width="870" height="135" alt="VCB" /></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img8.17.png" width="448" height="171" alt="MNNN" /></td>
+<td style="width: 50%;"><img src="img9.16.png" width="356" height="339" alt="VBN" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img10.15.png" width="489" height="306" alt="mnx" /></td>
+<td style="width: 50%;"><img src="img11.15.png" width="368" height="178" alt="vbn" /></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img12.14.png" width="470" height="257" alt="MNC" /></td>
+<td style="width: 50%;"><img src="img13.14.png" width="469" height="285" /></td>
+</tr>
+</tbody>
+</table>
+<p><img src="img14.13.png" width="448" height="244" alt="bvc" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p><img src="img15.12.png" width="949" height="268" alt="mnn" /></p>
+<p><img src="img16.12.png" width="1069" height="214" alt="mnnc" /></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="ejercicio_completo.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="optimizacin_de_consultas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

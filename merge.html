@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>MERGE | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-22"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li class="current-page-parent"><a href="migracin_de_datos.html" class="current-page-parent daddy">MIGRACIÓN DE DATOS</a>
+   <ul>
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li id="active"><a href="merge.html" class="active no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="insert_first__pivote.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="manejo_de_ndices.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">MERGE</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id21">
+<div class="iDevice emphasis0" >
+<div id="ta21_110_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, abordemos la instrucción MERGE que maneja Oracle. La palabra MERGE significa mezclar. Hacer un MERGE significa “cruzar” los datos de dos tablas. En este cruce hay una tabla origen y una tabla destino. El MERGE recorre la tabla origen, tupla por tupla, y verifica si existe en la tabla destino. Si en la tabla destino, la tupla no existe, se inserta; si en la tabla destino la tupla existe, se actualiza. Y hay una cláusula para borrar registros de la tabla destino.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a desarrollar el concepto con un ejercicio. Creemos la siguiente tabla. </span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img0.16.png" width="507" height="139" alt="BV" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a hacer un MERGE donde la tabla origen es EMPLEADO y la tabla destino es COPIA_EMPLEADOS1.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img1.16.png" width="641" height="372" alt="NB" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Los 6 empleados que hay grabados en EMPLEADOS quedaron grabados en COPIA_EMPLEADOS1. Como la tabla destino estaba vacía, lo que se hizo fueron 6 INSERTS.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img2.16.png" width="482" height="237" alt="BVR" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">A continuación, miremos cómo funciona el MERGE cuando ejecuta, al mismo tiempo, el UPDATE y el INSERT. Insertemos un nuevo empleado en la tabla EMPLEADOS.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img3.16.png" width="563" height="59" alt="VAB" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Luego actualicemos algunos datos de empleados ya existentes en la tabla:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img4.16.png" width="343" height="342" alt="tba" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Luego, volvamos a ejecutar el MERGE anterior, y miremos el contenido de la tabla COPIA_EMPLEADOS1. Nótese que en COPIA_EMPLEADOS ya aparece el empleado recién insertado (Roberto Castro) y aparecen actualizados la edad y el sueldo de los empleados 43834 y 12345 respectivamente.<br />En esta segunda ejecución del MERGE se puede comprobar la ejecución del UPDATE y del INSERT al mismo tiempo.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img5.12.png" width="478" height="256" alt="cad" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La instrucción MERGE de Oracle también tiene forma de hacer un DELETE. Miremos como funciona. Consideremos el mismo MERGE anterior, pero con la instrucción DELETE dentro de él.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img6.13.png" width="632" height="281" alt="ni" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Nótese que en COPIA_EMPLEADOS se borró al empleado con cedula 12345, el cual tenía un sueldo mayor a 8800000.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img7.12.png" width="488" height="255" alt="mnc" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">IMPORTANTE: Este DELETE funciona solamente para los registros actualizados con el UPDATE, no para todos los registros existentes. Verificarlo.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Video:</span></p>
+<p><a href="https://youtu.be/7ixjEG4uhz0">Merge en Oracle</a></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="insert_first__pivote.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="manejo_de_ndices.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>RMAN | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-33"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li class="current-page-parent"><a href="backups.html" class="current-page-parent daddy">BACKUPS</a>
+   <ul>
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li id="active"><a href="rman.html" class="active no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="undo_redologs_y_archivelogs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="backup_completo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">RMAN</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id34">
+<div class="iDevice emphasis0" >
+<div id="ta34_108_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Existen dos tipos de restore:</span></p>
+<ul style="text-align: justify;">
+<li><span style="font-family: verdana, geneva, sans-serif;">Completo: Restaurar hasta la última transacción ejecutada antes del fallo.</span></li>
+<li><span style="font-family: verdana, geneva, sans-serif;">Incompleta / Point-in-Time recovery: Restaurar hasta un punto en el tiempo.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Y existen cuatro tipos de backups:</span></p>
+<ul style="text-align: justify;">
+<li><span style="font-family: verdana, geneva, sans-serif;">En frío: Deben ser hechos con la base de datos parada.</span></li>
+<li><span style="font-family: verdana, geneva, sans-serif;">En caliente: Pueden ser hechos con la base de datos activa.</span></li>
+<li><span style="font-family: verdana, geneva, sans-serif;">Completo: Hace copia de todos los bloques de datos.</span></li>
+<li><span style="font-family: verdana, geneva, sans-serif;">Incremental: Hace copia solo de los bloques de datos que han cambiado desde el último backup.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A pesar de que los backups y restores se pueden hacer en forma manual, es decir, usando comandos de Oracle y del sistema operativo, la herramienta más recomendada para hacerlo es RMAN.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Es importante recordar la importancia que tiene el hecho de que la base de datos esté en estado Archivelog. Comparemos lo que se puede hacer cuando se está en Archivelog y cuando no se está.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: center;"><strong><span style="font-size: 12pt;">Estado</span></strong></td>
+<td style="width: 50%; text-align: center;"><strong><span style="font-size: 12pt;">Posibilidades</span></strong></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">NoArchivelog</span></td>
+<td style="width: 50%; text-align: center;">
+<p><span style="font-size: 12pt;">Backup Completo</span></p>
+<p><span style="font-size: 12pt;">BAckup en Frío</span></p>
+<p><span style="font-size: 12pt;">Restauración Completa</span></p>
+<p><span style="font-size: 12pt;">Restauración en Frío</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: center;"><span style="font-size: 12pt;">Archivelog</span></td>
+<td style="width: 50%; text-align: center;">
+<p><span style="font-size: 12pt;">Backup en Frío</span></p>
+<p><span style="font-size: 12pt;">Backup en Caliente</span></p>
+<p><span style="font-size: 12pt;">Backup Completo</span></p>
+<p><span style="font-size: 12pt;">Backup Incremental</span></p>
+<p><span style="font-size: 12pt;">Restauración en Frío</span></p>
+<p><span style="font-size: 12pt;">Restauración en Caliente</span></p>
+<p><span style="font-size: 12pt;">Restauración Completa</span></p>
+<p><span style="font-size: 12pt;">Restauración hasta un punto en el tiempo / Incompleta</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Como se puede apreciar, hay muchas mas posibilidades de copiar y restaurar, teniendo la base de datos en estado Archivelog.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">También es conveniente recordar que hay un espacio de almacenamiento en Oracle, llamado FRA (Fast Recovery Area), que sirve para grabar archivos importantes para recuperación de datos: archivelogs, redologs, e inclusive, los backups. Para saber si tenemos configurada la FRA y saber dónde está ubicada, podemos consultar el valor del parámetro DB_RECOVERY_FILE_DEST.</span><span style="font-family: verdana, geneva, sans-serif;"></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, vamos a mirar el paso a paso para poder hacer recuperación de la instancia, es decir, cuando se va la luz, hay un fallo de memoria, etc. , situaciones éstas que no tienen nada que ver con daño en disco.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Cuando ha habido un fallo de instancia, el motor de base de datos se da cuenta de esto revisando los Control Files. En dichos Control Files, Oracle detecta que la base de datos no se ha cerrado bien.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, lo que hace Oracle es un Rolling Forward y un Rolling Back de los Redo Log Files, en ese orden.</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Rolling Forward: En esta etapa, Oracle coge absolutamente todo lo que hay en los Redo Log Files y los baja a los Data Files.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Rolling Back: Acá, Oracle detecta cuáles de los datos bajados a los Data Files no estaban "commiteados" y los devuelve.</span></li>
+</ul>
+<p><span style="font-family: verdana, geneva, sans-serif;">Para mirar lo anterior, hagamos el siguiente ejercicio.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Con un usuario de trabajo, previamente creado, vamos a crear una tabla, con un solo campo, y le vamos a insertar una tupla. Luego hacemos COMMIT. Esta primera tupla se asegura que quede grabada en la tabla.</span></p>
+<p><span style="font-size: 12pt;">Luego grabamos una segunda tupla, sin hacer el COMMIT.</span></p>
+</td>
+<td style="width: 50%;"><img src="img0.3.png" width="498" height="375" alt="SQLPLUS" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Ahora, simulemos una falla de instancia. Esto lo hacemos bajando la instancia en forma abrupta, utilizando el SHUTDOWN ABORT.</span>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%;"><img src="img1.4.png" width="373" height="60" alt="kkdkd" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Ahora hagamos un STARTUP. Mientras el STARTUP termina de ejecutar, vamos a mirar el archivo de TRACE, en el cual Oracle va dejando constancia de todo lo que está sucediendo en la base de datos. La idea es mirar qué hace Oracle durante el STARTUP, sabiendo que hubo una caida de instancia brusca.</span><span style="font-size: 12pt;"><br /></span></p>
+<p><span style="font-size: 12pt;">El archivo de TRACE se encuentra en la carpeta ORACLE_HOME/diag/rdbms/&lt;nombre de BD&gt;/&lt;nombre de BD&gt;. Y el archivo se llama alert_&lt;nombre de BD&gt;.log</span></p>
+</td>
+<td style="width: 50%;"><img src="img2.4.png" width="424" height="174" alt="start" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Mirando con detenimiento el contenido del archivo TRACE, vemos que hay un momento ¿durante el STARTUP que Oracle se da cuenta de que hubo un problema y debe hacer un RECOVERY.</span></p>
+<p><span style="font-size: 12pt;">Es más, se puede observar que Oracle detecta que le debe hacer recovery a 30 bloques de datos.</span></p>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%;"><img src="img3.5.png" width="852" height="440" alt="hdhshh" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">En otro punto del TRACE, Oracle dice que le va a hacer recovery al Redo Log File 1, del Grupo 1, y especifica cual es el archivo al cual va a hacerle recovery (REDO01.LOG).</span></p>
+</td>
+<td style="width: 50%;"><img src="img4.5.png" width="926" height="126" alt="kakaka" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Y luego, indica que el proceso de recovery de los 30 bloques de datos ha sido completado.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">En este caso, hubo una recuperación automática de la instancia.</span></p>
+</td>
+<td style="width: 50%;"><img src="img5.4.png" width="945" height="131" alt="hahha" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Cuando volvemos a consultar los datos de la tabla T2, vemos que el primer registro, al cual se le había hecho COMMIT, se encuentra grabado en la tabla, mientras que el segundo registro no.</span></p>
+</td>
+<td style="width: 50%;"><img src="img6.3.png" width="236" height="127" alt="INSERT" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a continuación a hacer un <strong>backup y recuperación completa en frío</strong>.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Hacer un backup completo en frío es simplemente hacerle un shutdown immediate a la instancia y hacer una copia de todos los Data Files, Control Files, Redo Log Files correspondientes a la base de datos y que, generalmente, están en la carpeta ORADATA.</span></td>
+<td style="width: 50%;"><img src="img7.3.png" width="334" height="105" alt="shut" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">En este caso, vamos a crear una carpeta en el Escritorio de Windows, y ahí vamos a hacer la copia de los archivos correspondientes.</span></td>
+<td style="width: 50%;"><img src="img8.3.png" width="621" height="359" alt="DATOS" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Ahora, volvamos a reiniciar la instancia con STARTUP, entremos a la base de datos con el usuario de trabajo, insertémosle una nueva tupla a la tabla T2 y hagamos COMMIT.</span></p>
+<p><span style="font-size: 12pt;">Después de esto la tabla tendra dos tuplas, las cuales se muestran en la imagen.</span></p>
+<p><span style="font-size: 12pt;">Tener en cuenta que el backup en frío lo hicimos antes de insertar la tupla con valor 900.</span></p>
+</td>
+<td style="width: 50%;"><img src="img9.3.png" width="367" height="310" alt="GBGB" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Ahora, intencionalmente y para simular un daño o falla, vamos a borrar alguno de los Data Files, Control Files y/o Redo Log Files.</span>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%;"><img src="img10.2.png" width="676" height="276" alt="hanan" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Tarde o temprano, mientras estemos trabajando, aparecerá un error. El más común es el ORA-03113. Generalmente, este error indica un daño grave en la base de datos.</span><span style="font-size: 12pt;"><br /></span></td>
+<td style="width: 50%;"><img src="img11.2.png" width="468" height="157" alt="fv" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Ahora, tratemos de bajar la instancia, así sea con SHUTDOWN ABORT. Esto, con el fin de parar los procesos y la memoria de una manera organizada.</span><span style="font-size: 12pt;"><br /></span></td>
+<td style="width: 50%;"><img src="img12.2.png" width="282" height="73" alt="SHUT" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">A continuación, vamos a hacer la restauración completa. Esto se hace borrando TODO de la carpeta donde están los Data Files, Redo Log Files y Control Files (carpeta ORADATA), y trayendo para esta carpeta la copia de archivos que se había hecho anteriormente.</span></td>
+<td style="width: 50%;"><img src="img13.2.png" width="659" height="371" alt="copia" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Es entonces cuando volvemos a subir la instancia con STARTUP y, al revisar los datos de la tabla T2, solo contendrá una tupla, la correspondiente al valor de 100, y la única que tenía la tabla cuando se hizo la copia de los archivos.</span></p>
+<p><span style="font-size: 12pt;">Esto demuestra una vez más que solo tener un backup completo, sin los Archivelogs, puede hacer que se pierdan muchas horas de trabajo.</span></p>
+</td>
+<td style="width: 50%;"><img src="img14.2.png" width="377" height="141" alt="100" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">RMAN - Recovery Manager</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">RMAN es una aplicación cliente que viene incorporada con la instalación de Oracle. Sirve principalmente para la gestión de backups y restores en Oracle, y se ejecuta cada vez que se necesita, así como se hace con SQL Plus.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Es una herramienta muy extensa y potente, que se conecta a una o varias bases de datos, llamadas TARGET. Dichas bases de datos son a las cuales se les va a gestionar sus backups y/o restores.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Cada vez que RMAN va a hacer un backup o restore, consulta metadatos de sus Control Files. Para evitar que leer individualmente los Control Files de cada base de datos que va a manipular, RMAN maneja una base de datos de catálogo.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="RMAN.png" alt="RMAN" title="RMAN" width="675" height="345" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><strong><span style="font-family: verdana, geneva, sans-serif;">Fuente Propia</span></strong></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">A continuación, se explicarán aspectos de RMAN.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Para ejecutar RMAN, estando en el sistema operativo digitamos el comando mostrado: RMAN TARGET /.</span></p>
+<p><span style="font-size: 12pt;">TARGET / significa que nos vamos a conectar a RMAN, apuntando a la base de datos que tenemos activa en ese momento.</span></p>
+</td>
+<td style="width: 50%;"><img src="img15.2.png" width="638" height="180" alt="rman" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Otra manera de conectarnos a RMAN es con el comando RMAN TARGET <a href="mailto:sys@CURSO1">sys@CURSO1</a>.</span></p>
+<p><span style="font-size: 12pt;">En este caso, CURSO1 es la base de datos a la que me quiero conectar, y SYS es el usuario administrador.</span></p>
+</td>
+<td style="width: 50%;"><img src="img16.2.png" width="396" height="189" alt="otra" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Estando dentro de RMAN, podemos empezar a ejecutar comandos.</span></p>
+<p><span style="font-size: 12pt;">Por ejemplo, el LIST BACKUP me muestra los backups hechos.</span></p>
+<p><span style="font-size: 12pt;">Como no le hemos hecho backup a la base de datos CURSO1, sale el mensaje correspondiente.</span></p>
+<p><span style="font-size: 12pt;">En el mensaje se nota que RMAn está usando el Control File de la base de datos CURSO1 para mirar metadatos de backups anteriores, y no está usando la base de datos de catálogo.</span></p>
+</td>
+<td style="width: 50%;"><img src="img17.2.png" width="790" height="105" alt="l" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Con el comando SHOW ALL, podemos mirar los principales parámetros con los cuales está actualmente configurado RMAN.</span></p>
+</td>
+<td style="width: 50%;"><img src="img18.2.png" width="804" height="314" alt="rman" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si queremos cambiar el valor de algún parámetro, ejecutamos el comando CONFIGURE, el nombre del parámetro a cambiar y su nuevo valor.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">En este ejemplo, cambiamos a ON el valor del parámetro denominado BACKUP OPTIMIZATION.</span></p>
+</td>
+<td style="width: 50%;"><img src="img19.2.png" width="585" height="287" alt="nm" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Todo lo que se vaya haciendo por RMAN, se refleja en los metadatos de la base de datos.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Por lo tanto, por SQL Plus, hay consultas que podemos hacer y que nos muestran actividades hechas por RMAN.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Por ejemplo, si miramos el contenido que está en el comando mostrado, nos dice cuáles han sido los parámetros de RMAN a los cuales les hemos cambiado su valor.</span></p>
+</td>
+<td style="width: 50%;"><br /><img src="img20.2.png" width="435" height="238" alt="HXBXBX" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Con la opción CLEAR, en la instrucción CONFIGURE, puedo poner el valor de un parámetro a su default.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">En este caso, está volviendo a poner BACKUP OPTIMIZATION en OFF.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si vuelvo a ejecutar, por SQL Plus, la consulta anterior, ya no aparece nada. Esto significa que la vista V$RMAN_CONFIGURATION solo contiene los parámetros que están configurados con valores diferentes a su default.</span></p>
+</td>
+<td style="width: 50%;"><img src="img21.2.png" width="440" height="234" alt="imagen" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;">Por otra parte, RMAN maneja dos formatos de backups:</span></p>
+<ul>
+<li><span style="font-family: verdana, geneva, sans-serif;">Image Copies</span></li>
+<li><span style="font-family: verdana, geneva, sans-serif;">Backup Sets</span></li>
+</ul>
+<p><span style="font-family: verdana, geneva, sans-serif;">Mientras que los image copies son copias fieles de los archivos, los backup sets son copias de los archivos, sin incluir los bloques vacíos de dichos archivos. Por lo tanto, los backup sets pueden llegar a ser mucho mas pequeños que los image copies.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="IMAGE_VS_BACKUPSET.png" alt="im" title="im" width="665" height="363" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><strong><span style="font-family: verdana, geneva, sans-serif;">Fuente Propia</span></strong></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">De otra parte, en RMAN podemos ejecutar scripts de comandos RMAN. A continuación se muestra el procedimiento:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Vamos a crear un script, en un bloc de notas, con 3 comandos RMAN. Y luego, grabamos dicho script.</span></td>
+<td style="width: 50%;"><img src="img24.2.png" width="482" height="188" alt="BLOC" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">La primera forma de ejecutar el script, que es estando por fuera de RMAN, es con el comando mostrado.</span><span style="font-size: 12pt;"></span><span style="font-size: 12pt;"></span></p>
+</td>
+<td style="width: 50%;"><img src="img25.2.png" width="590" height="33" alt="mmm" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">La segunda manera de ejecutar un script, estando por dentro de RMAN, es la siguiente.</span>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%;"><img src="img26.2.png" width="537" height="48" alt="man" /></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="undo_redologs_y_archivelogs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="backup_completo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

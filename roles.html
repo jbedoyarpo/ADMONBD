@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>ROLES | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-27"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li class="current-page-parent"><a href="manejo_de_usuarios.html" class="current-page-parent daddy">MANEJO DE USUARIOS</a>
+   <ul>
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li id="active"><a href="roles.html" class="active no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="usuarios_y_privilegios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="perfiles.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">ROLES</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id52">
+<div class="iDevice emphasis0" >
+<div id="ta52_108_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En Oracle, un rol es un conjunto de privilegios. Es decir, podemos crear un rol para asignarle una serie de privilegios. Y, posteriormente, podemos asignarle a un usuario dicho rol. De esta manera, y de una manera mucho más eficiente, le estamos asignando varios privilegios a un o unos usuarios.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">También dentro de un rol, yo puedo incluir otro rol.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Los roles permiten gestionar en forma dinámica los permisos otorgados. Si se modifica un rol, todos los usuarios asignados se modifican.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">También, los roles se pueden activar y desactivar.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="ROLES_1.png" alt="ROL1" title="ROL1" width="681" height="376" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><strong><span style="font-family: verdana, geneva, sans-serif;">Fuente Propia</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En la imagen anterior, podemos ver que al rol denominado Rol Desarrollo, le asigno 4 privilegios. Y luego dicho rol, se los asigno a 3 usuarios. Estos tres usuarios tendrían asignados los 4 privilegios. También se ve que se puede asignar otro rol (Rol Test) al Rol Desarrollo. De esta manera, el Rol Desarrollo ya tendrá 6 privilegios, los cuales son heredados por los usuarios asignados.</span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Roles Predefinidos en Oracle</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Los roles que están predefinidos en Oracle, y que pueden ser utilizados como cualquier otro rol, se muestran en la tabla siguiente.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr style="background-color: #ff8000;">
+<td style="width: 50%; text-align: center;"><strong><span style="font-size: 12pt;">ROL</span></strong></td>
+<td style="width: 50%; text-align: center;"><strong><span style="font-size: 12pt;">DESCRIPCIÓN</span></strong></td>
+</tr>
+<tr style="background-color: #ff8000;">
+<td style="width: 50%;"></td>
+<td style="width: 50%;"></td>
+</tr>
+<tr style="background-color: #ff8000;">
+<td style="width: 50%;"><span style="font-size: 12pt;">CONNECT</span></td>
+<td style="width: 50%;"><span style="font-size: 12pt;">CREATE SESSION</span></td>
+</tr>
+<tr style="background-color: #ff8000;">
+<td style="width: 50%;"><span style="font-size: 12pt;">DBA</span></td>
+<td style="width: 50%;"><span style="font-size: 12pt;">Todos los permisos de Administración</span></td>
+</tr>
+<tr style="background-color: #ff8000;">
+<td style="width: 50%;"><span style="font-size: 12pt;">RESOURCE</span></td>
+<td style="width: 50%;">
+<p><span style="font-size: 12pt;">CREATE CLUSTER, CREATE INDEXTYPE, CREATE OPERATOR,</span></p>
+<p><span style="font-size: 12pt;">CREATE PROCEDURE, CREATE SEQUENCE, CREATE TABLE,</span></p>
+<p><span style="font-size: 12pt;">CREATE TRIGGER, CREATE TYPE</span></p>
+</td>
+</tr>
+<tr style="background-color: #ff8000;">
+<td style="width: 50%;"><span style="font-size: 12pt;">SCHEDULER_ADMIN</span></td>
+<td style="width: 50%;">
+<p><span style="font-size: 12pt;">CREATE ANY JOB, CREATE EXTERNAL JOB, CREATE JOB,</span></p>
+<p><span style="font-size: 12pt;">EXECUTE ANY CLASS, EXECUTE ANY PROGRAM, MANAGE SCHEDULER</span></p>
+</td>
+</tr>
+<tr style="background-color: #ff8000;">
+<td style="width: 50%;"><span style="font-size: 12pt;">SELECT_CATALOG_ROLE</span></td>
+<td style="width: 50%;"><span style="font-size: 12pt;">Consultar las tablas del diccionario de datos</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a mirar, de forma práctica, cómo se crean los roles.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La creación de un rol se hace con la instrucción CREATE ROLE, tal y como se ve en la imagen izquierda. Crear un rol es muy sencillo. Por otra parte, si queremos ver los metadatos de los roles, podemos consultar la vista DBA_ROLES. Podemos observar que ya está creado el rol DESARROLLO, el cual tiene el ID 123, asignado por Oracle, es un rol que para su manejo no requiere de password (PASSWORD_REQUIRED), y es un rol que no es mantenido o gestionado automáticamente por Oracle (ORACLE_MANTAINED), entro otros datos que son almacenados.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img2.18.png" width="413" height="183" alt="unv" /></td>
+<td style="width: 50%;"><img src="img3.18.png" width="580" height="196" alt="ynv" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Cómo se otorgan y quitan privilegios a un rol?</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La sintaxis para hacerlo es igual a si le otorgáramos un privilegio a un usuario. En la imagen de la izquierda, estamos otorgando al rol llamado DESARROLLO el privilegio de sistema SELECT ANY TABLE.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img4.18.png" width="468" height="163" alt="UED" /></td>
+<td style="width: 50%;"><img src="img5.14.png" width="478" height="249" alt="RCV" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si queremos mirar que privilegios de sistema se le han dado a un rol determinado, podemos consultar la vista DBA_SYS_PRIVS.</span></p>
+<p><img src="img6.15.png" width="579" height="195" alt="YNC" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">También podemos darle a un rol un privilegio de objeto, tal y como se ve a continuación. Al rol DESARROLLO de estamos dando permiso para hacer SELECT en la tabla VEHICULO del esquema EJEMPLO.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Y si queremos mirar los privilegios de objetos, como el del ejemplo mostrado, asignados a un rol, consultamos la vista DBA_TAB_PRIVS, como se ve en la imagen de la derecha.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img7.14.png" width="485" height="162" alt="ybc" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img8.13.png" width="440" height="147" alt="YNC" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para quitarle un privilegio a un rol, lo hacemos con el REVOKE, de la misma manera que se hace con usuarios. Luego de quitarle el privilegio de CREATE TABLE a dicho rol, vemos que en la vista DBA_SYS_PRIVS ya no existe.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img9.12.png" width="443" height="169" alt="ybc" /></td>
+<td style="width: 50%;"><img src="img10.11.png" width="476" height="171" alt="ybc" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Cómo asignarle un rol a un usuario?</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para mostrar el proceso, el cual es muy sencillo, creamos un usuario llamado DESA1. Luego, a dicho usuario le asignamos dos roles: CONNECT (que es un rol predefinido) y DESARROLLO. De esta manera, el usuario DESA1 tendrá permiso de conectarse a la base de datos y, además, tendrá todos los permisos asociados al rol DESARROLLO.</span></p>
+<p><img src="img11.11.png" width="680" height="352" alt="UNC" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, vamos a crear una conexión con el usuario recién creado, DESA1. Y estando dentro de dicho usuario, hagamos la consulta a la vista SESSION_ROLES, al cual muestra con que roles asignados me he conectado, en este caso, CONNECT y DESARROLLO. Para el mismo fin, también se puede usar la vista USER_ROLE_PRIVS</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img12.10.png" width="392" height="174" alt="YBC" /></td>
+<td style="width: 50%;"><img src="img13.10.png" width="544" height="165" alt="YBC" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Otras vistas para consultar roles</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La vista DBA_ROLES me permite mirar todos los roles que se tienen creados en la base de datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Otra vista interesante es la vista DBA_ROLE_PRIVS, la cual me dice a un usuario dado, qué roles se le han asignado. El primer ejemplo mostrado me dice qué roles tiene asignado el usuario DESA1. El segundo ejemplo me dice qué usuarios tienen asignado el rol DESARROLLO.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img14.9.png" width="457" height="211" alt="TBC" /></td>
+<td style="width: 50%;"><img src="img15.8.png" width="423" height="181" alt="YBC" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por otro lado, si queremos mirar el usuario DESA1, qué privilegios de tabla ha heredado a partir de un rol, podemos consultar ROLE_TAB_PRIVS. Y si queremos mirar que privilegios de sistema tiene el usuario, y que hayan sido asignados por medio de un rol, consultamos ROLE_SYS_PRIVS.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img16.8.png" width="425" height="115" alt="TBC" /></td>
+<td style="width: 50%;"><img src="img17.7.png" width="418" height="174" alt="YBC" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Cómo borrar un rol?</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se hace a través de DROP ROLE. Es importante señalar que cuando se borra un rol, automáticamente se le borran a todos los usuarios que lo tuvieran asignado. En el ejemplo, vemos que borramos en rol DESARROLLO y, automáticamente, al usuario DESA1 se  le borra dicho rol.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img18.7.png" width="340" height="169" alt="TBC" /></td>
+<td style="width: 50%;"><img src="img19.7.png" width="416" height="143" alt="TBC" /></td>
+</tr>
+</tbody>
+</table>
+<p>Videos:</p>
+<p><strong><a href="https://youtu.be/621k8oChKNY">Roles - Parte 1</a></strong></p>
+<p><strong><a href="https://youtu.be/P-D1RXxsPFU">Roles - Parte 2</a></strong></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="usuarios_y_privilegios.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="perfiles.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

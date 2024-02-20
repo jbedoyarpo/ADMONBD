@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>ENCRIPTACIÓN DE DATOS | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-35"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="encriptacin_de_datos.html" class="active no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="restore_hasta_un_tiempo_t.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="flashback.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">ENCRIPTACIÓN DE DATOS</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id48">
+<div class="iDevice emphasis0" >
+<div id="ta48_108_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Hay ocasiones en la cuales necesitamos "esconder" ciertos datos que son sensibles y/ confidenciales, y no dejar que cualquier usuario los vea. Para eso utilizamos la encriptación de datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En Oracle, la encriptación de datos se llama Data Masking o Redacción de datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En este módulo, vamos a ver tres maneras que tiene Oracle para encriptar datos:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Redacción Total</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Redacción Parcial</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Redacción Aleatoria</span></li>
+</ul>
+<p><span style="font-family: verdana, geneva, sans-serif;">Para hacer la explicación del tema, vamos a crear un nuevo usuario y le damos todos los privilegios:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img1.12.png" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Luego, conectados con el usuario recién creado, vamos a crear una tabla y le vamos a insertar algunas tuplas:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img1.12.png" width="824" height="278" alt="mmmv" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img2.12.png" width="753" height="237" alt="MMM" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><strong>Redacción Total</strong></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La redacción total se refiere a ocultar totalmente el valor de un campo de una tabla, es decir, con este tipo de redacción el valor de un campo se encripta en su totalidad.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Miremos un ejemplo de ello, para que entendamos el procedimiento para configurar este tipo de redacción.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Desde el usuario SYS, vamos a crear la siguiente política de redacción:</span></p>
+<p><img src="img3.12.png" width="870" height="345" alt="mmm" /></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Crear una política de redacción es ejecutar un procedimiento almacenado, configurando dicha política. En la política anterior, podemos ver lo siguiente:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">dbms_redact.add_policy: el procedimiento para crear una política de redacción se llama dbms_redact y éste tiene una función llamada add_policy, la cual permite crear una nueva política de redacción.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">object_schema: Esquema donde se va a crear la política, en este caso, ENCRIPTADO.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">object_name: Nombre del objeto, en este caso tabla, donde se aplicará la política de redacción.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">policy_name: Nombre de la política a crear.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">column_name: Nombre del campo al cual se le va a aplicar la política de redacción. En este caso, vamos a encriptar, en forma total, el valor del campo FECHACON.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">function_type: Tipo de redacción a crear. Como vemos, en este caso, es FULL.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">expression: Permite configurar a quien (o quienes) les aplica la política. En este caso, 1=1 significa una expresión que siempre es verdadera, y por lo tanto aplica para todos los usuarios, incluido el usuario ENCRIPTADO, dueño de la tabla.</span></li>
+</ul>
+<p><span style="font-family: verdana, geneva, sans-serif;">Después de haber creado la política anterior, desde el usuario ENCRIPTADO, hagamos un SELECT a la tabla EMPLEADO:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img4.12.png" width="726" height="257" alt="MMMC" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Podemos observar que el valor del campo FECHACON ha sido "ocultado". A todos los empleados les puso dicha fecha en "01/01/01". Nótese como se dijo antes que inclusive para el usuario ENCRIPTADO, dueño de la tabla, quedó el campo "ocultado".</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Borrar una Política de Redacción</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Para borrar la política de redacción creada anteriormente, ejecutamos el siguiente script, el cual utiliza la función drop_policy:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img5.8.png" width="765" height="289" alt="mmm" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación vamos a crear la misma política anterior. La diferencia es que va a aplicar para todos los usuarios, menos para el usuario ENCRIPTADO, el dueño de la tabla.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img6.9.png" width="747" height="373" alt="mn" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Lo único que cambia es el parámetro expression, donde se dice que aplica para todos los usuarios diferentes a ENCRIPTADO.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En este momento si el usuario ENCRIPTADO hace un SELECT a la tabla, aparece el campo sin encriptar. En cambio, si se hace el mismo SELECT desde otro usuario, dicho campo aparece en 01/01/01.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Como se puede consultar cuáles políticas de redacción hay creadas?</span></p>
+<p><img src="img7.8.png" width="1119" height="175" alt="mnv" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En la vista REDACTION_POLICIES podemos mirar la información de cada política de redacción creada.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">También hay una manera de consultar cuáles son los valores por default que saldrán en los campos encriptados. Estos valores por default son por el tipo de datos del campo. La consulta es la siguiente:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img8.9.png" width="1133" height="177" alt="mnc" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En el resultado anterior vemos que cuando se encripta un campo tipo date, aparece por default 01/01/01, que era lo que sucedía en el ejemplo anterior que hemos hecho. También vemos que cuando se encripta un campo tipo varchar, se pone un espacio en blanco, un valor numérico, pondrá un cero, etc.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Estos valores por defecto pueden ser cambiados. Este cambio se hace de la siguiente manera:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img9.6.png" width="1110" height="47" alt="nnn" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img10.7.png" width="1057" height="177" alt="mnv" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Acá estamos cambiando el valor por default de los campos tipo varchar. </span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Redacción Parcial</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La redacción parcial corresponde a encriptar una parte del valor de un campo, no lo encripta en su totalidad.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para hacer el ejemplo, el usuario ENCRIPTADO va a crear otra tabla y le va a insertar datos:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img11.7.png" width="793" height="210" alt="card" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img12.6.png" width="420" height="208" alt="mnv" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Dicha tabla tiene datos de los numeros de tarjetas de créditos de varios clientes.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a crear, desde SYS, la siguiente política de redacción:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img13.7.png" width="855" height="380" alt="bvc" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Con respecto al ejemplo anterior que hicimos, esta política tiene algunos aspectos nuevos:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">column_description: Descripción del campo que se va a encriptar.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">policy_description: Descripción de la política que se está creando.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">function_type: Redacción parcial.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">function_parameters: Formato con el cual se va a encriptar el campo. En este caso, como se está encriptando un campo de tipo VARCHAR, el primer parámetro es el formato del dato que se va a encriptar, el segundo es el formato como debe quedar el dato encriptado, el tercero es el caracter con el que se va a encriptar (*), el cuarto es la posición del string donde se va a empezar a encriptar y el quinto es posición del string hasta donde se va a encriptar. Si tenemos un valor numérico que vamos a encriptar, por ejemplo, el valor es 4598780, y tenemos dentro de function_parameters lo siguiente: '2, 1, 4', el valor encriptado sería 2222780, es decir, reemplace con un 2 los cuatro primeros dígitos del número. Por otra parte, si tenemos una fecha que se va a encriptar (tipo date), por ejemplo, el valor es 29-08-2011, y teenmos dentro de function_parameters lo siguiente: 'Md02Y', el valor encriptado sería 02-08-2011, es decir, reemplace el día por 02, y el mes y año dejarlos igual.</span><span style="font-family: verdana, geneva, sans-serif;"></span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">expression: La política aplicará para los usuarios que no (FALSE) tengan el rol denominado ROL_ADMINISTRADOR.</span></li>
+</ul>
+<p><span style="font-family: verdana, geneva, sans-serif;">Para mirar el funcionamiento de la política, desde SYS vamos a crear los siguientes usuarios.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img14.6.png" width="709" height="193" alt="usu" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Como se puede observar, a los dos usuarios creados, LUCAS y MATIAS, se les da permiso para consultar la tabla CREDIT_CARD del usuario ENCRIPTADO. Y al usuario LUCAS se le da el rol denominado ROL_ADMINISTRADOR.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Desde el usuario LUCAS, hagamos un SELECT a la tabla:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img15.5.png" width="538" height="235" alt="VCS" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">LUCAS, por tener el rol ROL_ADMINISTRADOR, no le aplica la política de redacción. Por eso, el campo CARD no aparece encriptado.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, hagamos la misma consulta por el usuario MATIAS:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img16.5.png" width="561" height="234" alt="frs" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Podemos observar que los valores del campo CREDIT han sido encriptados parcialmente, es decir, los últimos 4 dígitos del valor del campo son mostrados. Los demás dígitos son encriptados con * y -.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Podemos modificar una política de redacción que ya existe. Lo hacemos de la siguiente manera:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img17.4.png" width="737" height="248" alt="fsg" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se usa la función alter_policy. En este caso, estamos encriptando, en forma parcial, el campo IDCLIENTE. Si volvemos a consultar los datos de la tabla desde el usuario MATIAS, sale lo siguiente:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img18.4.png" width="525" height="213" alt="fsg" /></span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Redacción Aleatoria</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La redacción aleatoria corresponde a que el valor del campo no se muestra tal y como es, y dicho valor es reemplazado por un valor aleatorio. Miremos un ejemplo.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Desde el usuario ENCRIPTADO, vamos a crear una nueva tabla.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img19.4.png" width="911" height="247" alt="wsp" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a crear la siguiente política de redacción:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img20.4.png" width="780" height="251" alt="qwe" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Como se puede ver, al campo SUELDO, de la tabla PERSONAL, del usuario ENCRIPTADO, se le va a hacer un encriptamiento aleatorio (RANDOM). Esta política se le va a aplicar solamente al usuario llamado ADAN.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a crear al usuario ADAN y le vamos a dar los correspondientes permisos:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img21.4.png" width="939" height="114" alt="gbg" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, desde el usuario MATIAS, hagamos un SELECT a la tabla:</span></p>
+<p style="text-align: justify;"><img src="img22.3.png" width="591" height="229" alt="TGS" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Podemos mirar que el sueldo no salió encriptado.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Ahora, hagamos la misma consulta por el usuario ADAN. El resultado es que el valor del campo sueldo no se "esconde" pero sale un valor aleatorio para dicho campo.</span> <img src="img24.4.png" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">De hecho, si volvemos a ejecutar el SELECT, salen otros valores diferentes a los anteriores.</span></p>
+<p style="text-align: justify;"><img src="img23.3.png" width="479" height="247" alt="tgd" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"></span></p>
+<p></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="restore_hasta_un_tiempo_t.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="flashback.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

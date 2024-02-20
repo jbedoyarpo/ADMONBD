@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>ROL DEL DBA | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<link rel="stylesheet" type="text/css" href="interactive-video.css" />
+<script type="text/javascript" src="interactive-video.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li id="active"><a href="rol_del_dba.html" class="active no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="generalidades_de_oracle.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">ROL DEL DBA</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id12">
+<div class="iDevice emphasis0" >
+<div id="ta12_109_2" class="block iDevice_content">
+<div class="exe-text"><p></p>
+<p><img src="ROL_DBA.png" alt="ROL" width="1019" height="582" /></p>
+<p style="text-align: center;"><strong>Fuente. https://n4stack.io/2017/03/16/dba-dataops-move/</strong></p>
+<p style="text-align: center;">Imagen extraída de <a href="https://n4stack.io/2017/03/16/dba-dataops-move/">https://n4stack.io/2017/03/16/dba-dataops-move/</a></p>
+<p style="text-align: left;">Para entender el rol cambiante que ha tenido el DBA a lo largo de los años, se recomienda hacer una lectura pausada y crítica de los siguientes documentos. Para entender esta evolución, se sugiere hacer la lectura en el orden en que están presentados los documentos.</p>
+<p style="text-align: left;">Video:</p>
+<p style="text-align: left;"><a href="https://youtu.be/0gkgQ5VA1UQ">Rol del DBA</a></p></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice" id="id15">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Documentos para leer</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta15_82" class="block iDevice_content">
+
+</div>
+<ul class='exeFileList'><li><a href='CAPITULO DE DBA.pdf' target='_blank'>CAPITULO DE DBA.pdf<span> (Ventana nueva)</span></a></li>
+<li><a href='Responsabilidades del DBA - 2009.pdf' target='_blank'>Responsabilidades del DBA - 2009.pdf<span> (Ventana nueva)</span></a></li>
+<li><a href='The Changing Role of the DBA in the New Clour Era.pdf' target='_blank'>The Changing Role of the DBA in the New Clour Era.pdf<span> (Ventana nueva)</span></a></li>
+<li><a href='Oracle Magazine JanuaryFebruary 2019 (Paginas 39 y 45).pdf' target='_blank'>Oracle Magazine JanuaryFebruary 2019 (Paginas 39 y 45).pdf<span> (Ventana nueva)</span></a></li>
+<li><a href='PREGUNTAS ORIENTADORAS.pdf' target='_blank'>PREGUNTAS ORIENTADORAS.pdf<span> (Ventana nueva)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper interactive-videoIdevice em_iDevice" id="id16">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header" style="background-image:url(icon_presentation.png)"><h1 class="iDeviceTitle">Vídeo interactivo</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta16_113_2" class="block iDevice_content">
+			<div class="exe-interactive-video">				<p id="exe-interactive-video-file" class="js-hidden">					<a href="ROL_DEL_DBA.mp4">mp4</a>				</p>				<script type="text/javascript">//<![CDATA[					
+var InteractiveVideo = {"slides":[{"type":"singleChoice","question":"<p>Cual es una de las funciones del DBA?</p>","answers":[["Diseñar la base de datos",0],["Levantamiento de Requerimientos",0],["Sintonizar el funcionamiento de la BD",1],["Construir el modelo entidad relacion",0],["Insertar datos en la base de datos",0]],"startTime":64}],"i18n":{"start":"Inicio","results":"Resultados","slide":"Diapositiva (fotograma)","score":"Puntuación","seen":"Visto","total":"Total","seeAll":"debe ver todo el contenido y contestar a las preguntas","noSlides":"El vídeo no tiene contenidos interactivos.","goOn":"Continuar","error":"Error","dataError":"Código no compatible","onlyOne":"Sólo un vídeo interactivo por página.","cover":"Portada","fsWarning":"Salga del modo pantalla completa (tecla Esc) para ver la diapositiva","right":"¡Correcto!","wrong":"Incorrecto","sortableListInstructions":"Pinche y arrastre o use las flechas.","up":"Subir","down":"Bajar","rightAnswer":"Respuesta correcta:","notAnswered":"Por favor termine la actividad","check":"Comprobar","newWindow":"Ventana nueva"}}				//]]></script>			</div><p class="sr-av"><video width="320" height="240" controls="controls" class="mediaelement"><source src="ROL_DEL_DBA.mp4" /></video></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="generalidades_de_oracle.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

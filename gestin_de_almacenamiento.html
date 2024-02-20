@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>GESTIÓN DE ALMACENAMIENTO | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-40"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li id="active"><a href="gestin_de_almacenamiento.html" class="active no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="tablas_particionadas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">GESTIÓN DE ALMACENAMIENTO</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id31">
+<div class="iDevice emphasis0" >
+<div id="ta31_112_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para gestionar el almacenamiento en Oracle, debemos tener presente que existen dos tipos de almacenamiento: lógico y físico.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para el almacenamiento físico, la única estructura que existe es el DataFile. Para el almacenamiento lógico, existen diversas estructuras: Base de Datos, Tablespace, Segmentos, Extensiones y Bloques.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Es de advertir que la gestión de almacenamiento se puede hacer en cualquiera de los dos tipos de almacenamiento.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La siguiente imagen es un resumen de las diferentes estructuras de almacenamiento existentes y su relación.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="ESTRUCTURAS_ALMACENAMIENTO.png" alt="ESTRUCTURAS" title="ESTRUCTURAS" width="752" height="375" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><strong><span style="font-family: verdana, geneva, sans-serif;">Fuente Propia</span></strong></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Como se puede observar, una base de datos está compuesta de uno o más tablespaces, los cuales tienen asociados uno o varios segmentos. A su vez, cada segmento, puede tener una o varias extensiones, las cuales pueden tener incluidos uno o más bloques de datos. La anterior es la explicación de las estructuras lógicas de almacenamiento y su relación.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Con respecto a la única estructura de almacenamiento físico de datos que existe, el DataFile, podemos afirmar que un tablespace puede tener asociados uno o muchos DataFiles. Es importante entender que cada DataFile corresponde o está incluido en un solo tablespace.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Las ideas principales con respecto a estas estructuras de almacenamiento son las siguientes:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">●       Bloque: Mínima unidad de almacenamiento. Por defecto, 8K</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">●       Extensión: Conjunto de bloques CONTIGUOS</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">●       Segmento: Conjunto de Extensiones. Todo lo que ocupe espacio en una base de datos, es un segmento: segmento de tablas, segmento de índices, segmento de vistas materializables, etc.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">●       Tablespace: Conjunto de Data Files. Un segmento puede estar distribuido en varios datafiles, pero de UN MISMO TABLESPACE.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">●       Base de Datos: Conjunto de Tablespaces.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, miremos un poco más en detalle, cómo está conformado un bloque de datos en Oracle:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="BLOQUE_EN_ORACLE.png" alt="BLOQUE" title="BLOQUE" width="752" height="375" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: center;"><strong><span style="font-family: verdana, geneva, sans-serif;">Fuente Propia</span></strong></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Un bloque se divide en tres partes: cabecera, espacio ocupado por datos, espacio libre para datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Una fila / tupla se almacena como se muestra en la anterior imagen.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">El contenido de la cabecera, el cual corresponde a metadatos, son directorio de tablas y directorio de filas, entre otras cosas.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Cuando se lee una tupla de una tabla, Oracle sube al SGA el bloque completo donde está esa tupla. Oracle trabaja a nivel de bloques, no a nivel de tuplas.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, vamos a mirar unos comandos útiles que se pueden ejecutar para realizar las diferentes actividades referentes a la gestión de almacenamiento en Oracle.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img5.png" width="436" height="90" alt="undf" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">La forma básica para crear un nuevo tablespace es con la instrucción que se ve a la izquierda. Se debe especificar el nombre del tablespace, mínimo un datafile asociado y el tamaño de dicho datafile. Para el tamaño del datafile, se puede poner M(Megas), G(Gigas), T(Teras). Si no se especifica nada, lo toma en bytes.</span></td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img3.2.png" width="440" height="139" alt="DOSDF" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Es posible crear un tablespace con dos o más datafiles asociados. El comando para hacerlo se encuentra a la izquierda.</span></td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img4.2.png" width="474" height="183" alt="comandos" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Para poder mirar algunos metadatos referentes a los tablespaces existentes, podemos ejecutar las consultas mostradas. Cada consulta entrega información detallada acerca de ellos.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Dichos comandos deben ser ejecutados con el usuario SYS.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;"></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;">Al ejecutar SELECT * FROM DBA_TABLESPACES, obtenemos la siguiente información:</span><span style="font-family: verdana, geneva, sans-serif;"></span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 100%;"><img src="img9.png" width="1059" height="197" alt="listado" /></td>
+</tr>
+</tbody>
+</table>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 100%;"><img src="img5.1.png" width="1059" height="22" alt="info" /></td>
+</tr>
+</tbody>
+</table>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 100%;"><img src="img6.png" width="1059" height="26" alt="info 1" /></td>
+</tr>
+</tbody>
+</table>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 100%;"><img src="img7.png" width="1059" height="18" alt="columnas" /></td>
+</tr>
+</tbody>
+</table>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 100%;"><img src="img8.png" width="1059" height="25" alt="info2" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">De las anteriores imagenes, podemos mirar que dicho comando nos genera un inventario de los tablespaces existentes. Si miramos un poco más en detalle la información del tablespace recién creado, TBS_VENTAS98, encontramos el nombre del tablespace, el tamaño del bloque de datos que por defecto es 8192 bytes, el estado del tablespace es ONLINE, los contenidos de dicho tablespace es permanente (PERMANENT), el manejo de los especios de sus segmentos está automático, es decir, lo gestiona Oracle, entre otras cosas.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Al ejecutar SELECT * FROM V$DATAFILE, obtenemos la siguiente información:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img10.png" width="527" height="183" alt="datafile" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Podemos ver que, para este caso, saca un listado de todos los datafiles existentes en la instancia. Y cada datafile tiene un ID único, llamado FILE#. Se ve que el datafile correspondiente al tablespace TBS_VENTAS98, llamado DF_VENTAS_0.DBF, tiene el FILE# 25.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Lo que existe en V$DATAFILE, la cual es una vista dinámica, es un resumen de lo que está almacenado en DBA_DATA_FILES, la cual se muestra  a continuación.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Al ejecutar SELECT * from DBA_DATA_FILES, se obtiene lo siguiente:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 100%;"><img src="img11.png" width="1059" height="206" alt="dbafiles" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Como se puede observar, el datafile DF_VENTAS_0.DBF corresponde al tablespace VENTAS98, su FILE# es 25, su tamaño es 3 Megas aproximadamente (3145728 bytes), tal y como está especificado en el momento de crear el tablespace.  Estos 3145728 bytes corresponden a 384 bloques de datos (3145728 / 8192). El estado de dicho datafile es AVAILABLE, disponible.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">También podemos mirar que el datafile no se autoextiende. Cuando el datafile se llena, y tratamos de grabar algo más en él, saca un error.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Y en USER_BYTES, el espacio disponible en ese datafile para grabar datos es un poco más de 2 Megas. Hay que tener en cuenta que al crear un datafile, hay una porción de espacio ocupado por metadatos.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 100%;"><img src="img12.png" width="1059" height="203" alt="info2" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por otra parte, el tablespace TEMP, que es usado por Oracle como un espacio temporal para almacenar datos de cálculos, ordenaciones, etc., también tiene sus datafiles asociados. La diferencia es que los metadatos de los datafiles del tablespace TEMP, se encuentran en V$TEMPFILE y DBA_TEMP_FILES. La información que contienen dichas vistas es prácticamente la misma que la mostrada anteriormente.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si queremos mirar el espacio disponible que tiene cada tablespace, podemos consultar la vista DBA_FREE_SPACE. El resultado del comando SELECT *  FROM DBA_FREE_SPACE es el siguiente:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img13.png" width="527" height="204" alt="tbs" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Podemos ver que el tablespace VENTAS98 tiene un FILE# 25, como ya lo hemos dicho anteriormente. Tiene un espacio disponible de 2097152 bytes, correspondientes a 256 bloques de datos.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Acá, para un mismo tablespace, pueden aparecer varios registros. Cada registro corresponde a un bloque de datos de dicho tablespace. Recuerde que un tablespace puede tener muchos bloques de datos.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para mirar el manejo de espacio en los tablespaces, vamos a crear una tabla en el tablespace recien creado. Esto lo hacemos con la primera instrucción de la tabla siguiente. Y luego, a dicha tabla, le vamos a insertar 1000 tuplas de prueba, a través de la segunda instrucción de la tabla.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img14.png" width="527" height="43" alt="ventas" /></td>
+<td style="width: 50%;"><img src="img15.png" width="463" height="79" alt="insertar" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Al volver a consultar el espacio disponible en el tablespace VENTAS_98, vemos que éste se redujo:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;"><img src="img16.png" width="527" height="167" alt="espacio" /></span></td>
+<td style="width: 50%; text-align: justify;"><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Se puede observar que el espacio disponible en el tablespace VENTAS_98 es 1900544 bytes, correspondientes a 232 bloques de datos. Antes de ejecutar la instrucción de inserción de datos en la tabla, el espacio disponible era de 2097152 bytes, lo cual demuestra que el espacio disponible se redujo. </span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para modificar el tamaño de un datafile , ejecutamos el siguiente comando:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;"><img src="img17.png" width="479" height="96" alt="alter" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Recuerde que originalmente cuando fue creado, el datafile DF_VENTAS_0.DBF tenía un tamaño de 3 megas aproximadamente. Vamos a alterar su tamaño a 10 megas.</span></p>
+<p><span style="font-size: 12pt;">Se puede notar la cláusula RESIZE.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><img src="img18.png" width="527" height="120" alt="aumento" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Despues de ejecutar el comando anterior, podemos ver que el tamaño del datafile DF_VENTAS_0.DBF es de 10482760 bytes, es decir, 10 megas.</span></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;"><img src="img19.png" width="527" height="166" alt="tbspace" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Y también, como se puede ver, el espacio disponible en el tablespace TBS_VENTAS98 aumentó a 9240576 bytes. Al aumentar el tamaño de un datafile, aumenta el espacio disponible del tablespace asociado a dicho datafile.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para agregar un nuevo datafile a un tablespace, ejecutamos el siguiente comando:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img20.png" width="527" height="68" alt="adicionar" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Acá agregamos un nuevo datafile, llamado DF_VENTAS_98.DBF, de tamaño 10 megas.</span></td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img21.png" width="527" height="165" alt="otrodf" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Como podemos observar, en la vista DBA_FREE_SPACE ya aparecen dos tuplas para el tablespace TBS_VENTAS98, una por cada datafile que ya posee. Miren que el FILE# del nuevo datafile es el 26, con un espacio disponible de 9437184 bytes.</span></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;">Para borrar un datafile, se ejecuta el siguiente comando:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;"><img src="img22.png" width="527" height="28" alt="borrar" /></span></td>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Para borrar un datafile, éste debe estar vacío. De lo contrario, no se puede borrar el datafile individualmente, sino que hay que borrar el tablespace.</span></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;">Para eliminar un tablespace, la mejor manera de hacerlo es con el siguiente comando:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img23.png" width="410" height="70" alt="borrar" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Cuando un tablespace no está vacío, debemos incluir la cláusula INCLUDING CONTENTS para decir que se borre el tablespace incluido su contenido. La cláusula DATAFILES le dice al comando que ademas de borrar la estructura logica, es decir el tablespace, tambien borre fisicamente los datafiles asociados.</span></p>
+<p><span style="font-size: 12pt;">Al hacer un SELECT a la tabla ARTICULO, creada anteriormente en el tablespace borrado, ya no existe dicha tabla.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-family: verdana, geneva, sans-serif;">Por otra parte, procedamos a hablar de los estados de un tablespace:</span></p>
+<table border="1" style="width: 100%; height: 131px;">
+<tbody>
+<tr style="height: 110px;">
+<td style="width: 50%; height: 110px; text-align: justify;"><span style="font-size: 12pt;"><img src="img24.png" width="343" height="105" alt="insertar" /></span></td>
+<td style="width: 50%; height: 110px; text-align: justify;"><span style="font-size: 12pt;">Vamos a crear una tabla en el tablespace TBS_VENTAS98, que se volvio a crear anteriormente.</span></td>
+</tr>
+<tr style="height: 21px;">
+<td style="width: 50%; height: 21px;"><img src="img25.png" width="465" height="49" alt="read" /></td>
+<td style="width: 50%; height: 21px;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Uno de los estados posibles de un tablespace es READ ONLY. Con el comando mostrado, ponemos el tablespace en dicho estado. Al mirar los metadatos de dicho tablespace, en la vista DBA_TABLESPACE, vemos que dicho tablespace ya está en estado READ ONLY, como se ve en la siguiente imagen.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img26.png" width="527" height="104" alt="read only" /></td>
+<td style="width: 50%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Cuando tratamos de insertar una nueva tupla en la tabla T3, la cual está creada en el tablespace que está en estado READ ONLY, saca el siguiente error:</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img27.png" width="527" height="306" alt="insert" /></td>
+<td style="width: 50%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">El tablespace está en estado READ ONLY, lo cual significa que no se puede grabar nada en él.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img28.png" width="424" height="29" alt="online" /></td>
+<td style="width: 50%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Vamos a volver a poner el tablespace en estado ONLINE. Al tratar de insertar datos en la tabla T#, sigue saliendo el mismo error anterior.  Esto sucede debido a que cuando un tablespace está en estado READ ONLY, para volver a activar la grabación en él, debemos ponerlo en estado READ WRITE, no ONLINE.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img29.png" width="506" height="36" alt="read write" /></td>
+<td style="width: 50%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Con este comando, ya podemos grabar nuevas tuplas en la tabla T3.</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img30.png" width="527" height="27" alt="offline" /></td>
+<td style="width: 50%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Otro de los estados en los cuales puede estar un tablespace es OFFLINE NORMAL. En este estado, el tablespace no está disponible para ninguna acción. Si intentamos hacer un INSERT o un SELECT a la tabla T3, aparece el siguiente error:</span></p>
+</td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img31.png" width="527" height="112" alt="error" /></td>
+<td style="width: 50%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para volver a activar el tablespace y poder hacer actividades en él, lo debemos poner en estado ONLINE.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por otra parte, para mover y/o renombrar un datafile lo debemos hacer con el comando siguiente:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img32.png" width="527" height="19" alt="renombrar" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Si vamos a la carpeta TEMP, vemos que el nombre del datafile ha cambiado.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Pasando a otro aspecto de los tablespaces, hay una manera de configurar un tablespace para que cuando se llene se pueda autoextender. Para ello, podemos ejecutar el comando siguiente:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img33.png" width="527" height="74" alt="autoextender" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;">Con ese comando, estamos creando un tablespace llamado TBS_VENTAS2023, con un datafile asociado. Estamos poniendo el parametro AUTOEXTEND en ON para que su tamaño vaya creciendo dinámicamente. El parámetro NEXT significa que cuando el tablespace se llene, éste crezca en otro 1 Mega. Y el MAXSIZE significa que el tablespace crezca hasta un tamaño máximo de 250 megas.</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si consultamos en este momento la vista DBA_DATA_FILES, vemos que el campo AUTOEXTENSIBLE está en YES, y que el tamaño del Data File es de 1 mega, su tamaño inicialmente configurado.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img34.3.png" width="872" height="165" alt="MNC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, vamos a crear una tabla dentro de dicho tablespace, le vamos a insertar muchas tuplas a dicha tabla y nos vamos a dar cuenta que el Data File se va a ir autoextendiendo, es decir, cuando se llene ese mega inicial que tiene de tamaño, se va a autoextender de a un mega más.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img35.3.png" width="973" height="418" alt="MNC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img36.3.png" width="391" height="150" alt="MNC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Luego de insertarle 131072 tuplas a la tabla, vemos que el tamaño del Data File ya ha crecido a 9437184 bytes, ha ido creciendo automáticamente.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img37.2.png" width="895" height="199" alt="mnc" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Qué sucede si el Data File no tiene autoextensión activada? Deshabilitemos su autoextensión, y luego tratemos de insertarle una nueva tupla a la tabla. Vemos que genera un error porque ya el Data File no es capaz de crecer más.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img38.1.png" width="797" height="150" alt="mnb" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img39.1.png" width="1013" height="273" alt="pom" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para volverlo habilitar, hacemos lo siguiente:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img40.1.png" width="785" height="339" alt="mnc" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Y se puede observar que ya acepta grabación de nuevas tuplas en la tabla.</span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Tablespaces Temporales</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Cuando consultamos los tablespaces temporales existentes, encontramos que hay un solo tablespace de este tipo, llamado TEMP.  </span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img41.1.png" width="1058" height="152" alt="mnl" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La base de datos siempre tiene un tablespace temporal por default. Para consultar cual es el tablespace temporal por default, ejecutamos la siguiente instrucción. Vemos que el tablespace temporal por defecto es TEMP.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img42.1.png" width="831" height="171" alt="mrv" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Podemos adicionar un nuevo tablespace temporal.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img43.1.png" width="915" height="42" alt="nc" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Volvamos a consultar los tablespaces temporales existentes.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img44.1.png" width="985" height="198" alt="mnc" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para cambiar el tablespace que usará el sistema por default, hacemos lo siguiente:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img45.1.png" width="850" height="191" alt="mnc" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Podemos observar que el nuevo tablespace temporal por default es TEMP1.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"></span>Videos:</p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><span style="font-family: verdana, geneva, sans-serif; font-size: 12pt;"><strong><a href="https://youtu.be/hgtNwgn2yXk">Estructuras de Almacenamiento</a></strong></span></td>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><strong><a href="https://youtu.be/O0nTtSio2oU">Creación de Tablespaces</a></strong></span></td>
+<td style="width: 33.3333%; text-align: center;"><strong><span style="font-size: 12pt; font-family: verdana, geneva, sans-serif;"><a href="https://youtu.be/Mq7e3Z4MDiA">Metadatos Tablespaces</a></span></strong></td>
+</tr>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><strong><a href="https://youtu.be/0tGa628kuoE">Tabla a Tablespace</a></strong></span></td>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><strong><a href="https://youtu.be/wDD3Dkl2xvM">Modificar/Borrar Tablespaces</a></strong></span></td>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><strong><a href="https://youtu.be/BLHCYe3EAj8">Borrar Tablespaces Datos Relacionados</a></strong></span></td>
+</tr>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><strong><a href="https://youtu.be/e-DZMN_2-cM">Estados Tablespaces</a></strong></span></td>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><strong><a href="https://youtu.be/hWuKzx8ijoU">Error Común Tablespaces</a></strong></span></td>
+<td style="width: 33.3333%; text-align: center;"><a href="https://youtu.be/NYcSHl7sbcM"><span style="font-size: 12pt;"><strong>Tablespaces Temporales</strong></span></a></td>
+</tr>
+<tr>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><strong><a href="https://youtu.be/gTy62FpGYj4">Compactar Tablespaces</a></strong></span></td>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><strong> </strong></span></td>
+<td style="width: 33.3333%; text-align: center;"><span style="font-size: 12pt;"><strong> </strong></span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="tablas_particionadas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

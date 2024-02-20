@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>TABLAS PARTICIONADAS | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-39"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li id="active"><a href="tablas_particionadas.html" class="active no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="gestin_de_lobs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="gestin_de_almacenamiento.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">TABLAS PARTICIONADAS</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id18">
+<div class="iDevice emphasis0" >
+<div id="ta18_108_2" class="block iDevice_content">
+<div class="exe-text"><table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;">
+<p><img src="PARTICION.png" alt="PART" width="489" height="489" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><strong>Fuente. https://www.wikiwand.com/es/Partici%C3%B3n_de_un_conjunto</strong></p>
+</td>
+<td style="width: 50%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Una de las funcionalidades novedosas de Oracle es el concepto de tablas particionadas. </span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">El concepto de tablas particionadas permite grabar los datos de una tabla en diferentes particiones, posiblemente, ubicadas en distintos tablespaces.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Cuando se tienen tablas con muchos registros, se puede pensar en particionar dicha tabla por algún criterio. De esta manera, las consultas sobre la tabla van a ser mucho más eficientes. Por ejemplo, en vez de tener que hacer una consulta sobre una tabla que tiene 5'000.000 de registros, si particionamos dicha tabla en 5 particiones, la consulta se podría hacer en una partición con 1'000.000 de registros. Esto hará que la ejecución de la consulta sea mucho más rápida.</span><span style="font-size: 12pt;"></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img1.png" width="490" height="275" alt="" /></td>
+<td style="width: 50%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Vamos a suponer que tenemos una compañía que factura productos en los 5 continentes existentes. El volumen de facturas que se emiten diariamente es muy alto, y por lo tanto, se desea particionar la tabla de facturas. </span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Para ello vamos a crear 4 tablespaces para almacenar las facturas de los distintos continentes: Asia, Europa, América Latina y otros.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%; text-align: justify;"><img src="img2.png" width="490" height="275" alt="tp" /></td>
+<td style="width: 50%;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">En la imagen, se observa como se crea una tabla particionada.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Es importante aclarar acá que la partición que se está haciendo es POR LISTA, es decir, por el valor de un campo específico. Como se puede ver, la tabla VENTAS1 se va a particionar por el campo ORIGEN, dependiendo de si tiene el valor de ASIA, EUROPA, AL y otros.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Dependiendo del valor del campo ORIGEN, esa tupla será grabada en el tablespace correspondiente.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img3.png" width="490" height="275" alt="IN" /></td>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Con los comandos que aparecen en la imagen, estamos insertando, en la tabla VENTAS1, 99999 registros de cada uno de los continentes considerados.</span></p>
+<p><span style="font-size: 12pt;">De esta manera, al final, la tabla VENTAS1 tendrá 400000 registros aproximadamente.</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img4.png" width="490" height="275" alt="CONSULTA" /></td>
+<td style="width: 50%; text-align: justify;"><span style="font-size: 12pt;">Para consultar una tabla particionada, se especifica en el SELECT el nombre de la partición donde se desea hacer la consulta, tal y como se ve en la imagen.</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Videos:</p>
+<p><a href="https://youtu.be/AV1lB5qgZso">Introducción a Tablas Particionadas</a></p>
+<p><a href="https://youtu.be/I3JRLZZNnWQ">Tablas Particionadas por Lista</a></p>
+<p><a href="https://youtu.be/8X9ReOMopsQ">Tablas Particionadas por Rango</a></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="gestin_de_lobs.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="gestin_de_almacenamiento.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

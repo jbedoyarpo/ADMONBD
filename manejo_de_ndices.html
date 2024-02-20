@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>MANEJO DE ÍNDICES | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-23"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="manejo_de_ndices.html" class="active no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="merge.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="manejo_de_usuarios.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">MANEJO DE ÍNDICES</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id22">
+<div class="iDevice emphasis0" >
+<div id="ta22_108_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Qué es un Índice?</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Los índices son estructuras creadas en la base de datos y que permiten agilizar las </span><span style="font-family: verdana, geneva, sans-serif;">consultas sobre los datos.</span><br /><span style="font-family: verdana, geneva, sans-serif;">En los índices se graban tuplas en la forma clave – dirección, es decir, cada tupla </span><span style="font-family: verdana, geneva, sans-serif;">del índice tiene el valor del campo a consultar y la dirección física de la tupla que </span><span style="font-family: verdana, geneva, sans-serif;">contiene dicho valor, asemejándose al índice de un libro. </span></p>
+<p style="text-align: justify;"><img src="img0.7.png" width="614" height="265" alt="indice" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p style="text-align: center;"><span style="font-family: verdana, geneva, sans-serif; font-size: 8pt;">Fuente Propia</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se debe tener en cuenta que los índices aumentan el rendimiento de las consultas, </span><span style="font-family: verdana, geneva, sans-serif;">pero rebajan el rendimiento de las operaciones de actualización (INSERT –</span><br /><span style="font-family: verdana, geneva, sans-serif;">UPDATE – DELETE). Por eso, a la hora de crear índices hay que poner “en la </span><span style="font-family: verdana, geneva, sans-serif;">balanza” esta situación y mirar cual conviene más.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Es importante aclarar que los índices se crean a campos de una tabla. Si se quiere agilizar la ejecución de las consultas que se hagan con condiciones sobre un campo de una tabla, se le crea un índice a la tabla por ese campo.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación se procede a mostrar una serie de comandos SQL útiles para la gestión de índices en Oracle.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para hacer las actividades se van a ir creando algunas tablas e insertándoles sus respectivos datos.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img1.19.png" width="656" height="291" alt="CREAR" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img2.24.png" width="673" height="278" alt="oms" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para consultar los metadatos de los índices que tienen creados las dos tablas recién creadas, ejecutamos el siguiente comando:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img3.24.png" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img4.24.png" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Cada tabla aparece ya con un índice creado. Recordar que cuando una tabla se crea, el motor de la base de datos crea un índice por la clave primaria. A eso se debe el nombre "extraño" que tienen los dos índices mostrados en la imagen anterior. A través de la vista llamada all_indexes, podemos observar el nombre del índice, su tipo, de qué tabla es y en qué tablespace está grabado.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Es curioso que a través de esta vista, all_indexes, no podemos saber el índice sobre qué campo fue creado. Para esllo existe otra vista, del diccionario de datos, llamada ALL_IND_COLUMNS.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img5.20.png" width="670" height="172" alt="IND_COL" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se puede observar que el índice que tiene la tabla CARGO1 es por medio del campo CODIGO (COLUMN_NAME), el cual es la clave primaria.</span></p>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><span style="font-family: verdana, geneva, sans-serif;">Índices Únicos</span></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Hay otro tipo de índice denominado índice único. A continuación se realizan una serie de actividades para demostrar el concepto.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A la tabla CARGO1, se le va a crear un índice único llamado in_nombre, y dicho índice es por el campo NOMBRE.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img6.21.png" width="633" height="186" alt="UNICO" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A la instrucción CREATE INDEX se le adiciona la palabra UNIQUE. </span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Al volver a consultar los índices que tiene creados la tabla CARGO1, aparece el nuevo índice.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img7.20.png" width="517" height="144" alt="oms" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, tratemos de insertar una nueva tupla en la tabla CARGO1. La particularidad es que se va a insertar un cargo con un nombre de otro cargo que ya existe en la tabla.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img8.19.png" width="649" height="205" alt="yse" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Como se puede observar, la ejecución de la inserción saca un error (ORA-00001). Esto debido a que el índice de tipo único creado anteriormente, evita que se puedan grabar varios cargos con el mismo nombre.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Los índices únicos evitan que en el campo indexado se graben tuplas con el mismo valor en él. Es otra manera de implementar un valor único en un campo, tal y como si fuera una clave primaria.</span></p>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><span style="font-family: verdana, geneva, sans-serif;">Índices Bitmap</span></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Existe otro tipo de indice en Oracle llamado Bitmap. Se recomienda crear este tipo de indice cuando los valores de la columna a indexar no varian mucho, es decir, cuando la columna no tiene muchos valores diferentes.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A la tabla EMPLEADO1, creada anteriormente, adicionarle un nuevo campo llamado categoría, de tipo numérico. Vamos a suponer que existen empleados de 5 categorias posibles: 1, 2, 3, 4, 5. Por lo tanto, el campo categoría es candidato a crearle un indice bitmap.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para crearle dicho índice, ejecutamos el siguiente comando.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img9.18.png" width="634" height="315" alt="dcv" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Al CREATE INDEX se le adiciona la palabra BITMAP.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Consultemos los metadatos de este nuevo índice. </span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img10.16.png" width="583" height="245" alt="gbs" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se puede observar que el índice em_categoría, recién creado, es de tipo BITMAP.</span></p>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><span style="font-family: verdana, geneva, sans-serif;">Índice por más de un campo</span></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Dependiendo de la consulta que se quiera hacer, si ésta es por los valores de dos campos, también es posible crear un índice con el fin de agilizar la consulta.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">La instrucción sería la siguiente:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img11.16.png" width="656" height="170" alt="DFC" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Comprobemos que el índice haya sido generado por dos campos de la tabla EMPLEADO1:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img12.15.png" width="619" height="202" alt="emp1" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="text-decoration: underline;"><span style="font-family: verdana, geneva, sans-serif;">Índice basado en funciones</span></span></p>
+<div style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En Oracle, existe la posibilidad de crear índices basados en funciones, esto es, en funciones agregadas o expresiones aritméticas.</span></div>
+<div style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"></span></div>
+<div style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para hacer el ejemplo, vamos inicialmente a poblar a la tabla EMPLEADO1 de muchos registros. Para ello, ejecutar lo siguiente:</span></div>
+<div><span style="font-family: verdana, geneva, sans-serif;"><img src="img13.15.png" width="638" height="251" alt="scd" style="display: block; margin-left: auto; margin-right: auto;" /></span></div>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Con esto nos aseguraremos que la tabla tendrá, mínimo, 20000 registros.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, creemos un índice para el campo “nombre” de la tabla EMPLEADO1.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img14.14.png" width="609" height="44" alt="GBD" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, vamos a hacer la siguiente consulta y mirar dentro del plan de ejecución si fue o no utilizado el índice para su ejecución.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img15.13.png" width="446" height="218" alt="yhn" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Con la anterior instrucción se genera el plan de ejecución del SELECT indicado. Si queremos mirar el plan de ejecución generado, ejecutamos lo siguiente:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img16.13.png" width="595" height="205" alt="plan" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Como se puede observar, la consulta utiliza el índice creado ya que en el WHERE del SELECT se está preguntando por el nombre de un empleado.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, generemos el plan de ejecución de la misma consulta pero con un pequeño cambio, utilizando la función UPPER (convierte a mayúsculas) en el WHERE.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img17.11.png" width="550" height="95" alt="edc" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Miremos el plan de ejecución de la anterior consulta:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img18.11.png" width="620" height="249" alt="tgd" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Podemos observar que para esta consulta no se usa el índice, a pesar de que estamos preguntando por el nombre de un empleado. Lo que va a ejecutar el motor es un TABLE ACCESS FULL, es decir, va a recorrer todos los registros de la tabla para encontrar el que se está buscando. Esta situación se dio porque estamos utilizando un UPPER en el campo NOMBRE en la condición.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para obligar a que para la anterior consulta use un indice, podemos crear el siguiente:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img19.10.png" width="637" height="135" alt="rfc" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Al volver a ejecutar la última consulta, se verifica que se usó el nuevo índice (EM_NOMBRE_MAYUSCULA). En este caso, estamos implementando un índice basado en funciones, la función UPPER.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img20.9.png" width="646" height="217" alt="fcv" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><span style="font-family: verdana, geneva, sans-serif;">Monitoreo del uso de índices</span></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Cuando se ejecuta una consulta, a veces es conveniente saber si la ejecución usó o no índices.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Una de las maneras de hacerlo se mostró en el apartado anterior, cuando se genera el plan de ejecución con la instrucción EXPLAIN PLAN y luego consultando el plan generado.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Pero existen otras maneras y es lo que se explica a continuación. Para hacer la explicación, se va a crear un nuevo índice sobre la tabla EMPLEADO1.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img21.9.png" width="549" height="167" alt="fed" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Para activar el monitoreo del índice, ejecutamos...</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img22.2.png" width="495" height="173" alt="dcv" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Ahora hagamos una consulta sobre la tabla EMPLEADO1.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img23.2.png" width="354" height="59" alt="cv" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para saber si el indice fue utilizado al ejecutar la anterior consulta, se hace lo siguiente. Como se puede observar, la columna USED está en NO, lo cual quiere decir que el índice no fue utilizado. Era de esperarse el resultado ya que en el WHERE de la consulta está la cédula y no la edad, campo asociado al índice.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img24.8.png" width="655" height="187" alt="uhb" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Ahora ejecutemos la siguiente consulta:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img25.6.png" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Y volvamos a mirar si con la consulta anterior el índice se usó. Ahora podemos observar que la columna USED está en YES, lo cual significa que para la ejecución de la consulta se usó el índice.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img26.6.png" width="686" height="201" alt="unj" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La vista v$object_usage, del diccionario de datos, permite saber el uso de los índices. Si un índice ha sido usado por lo menos una vez, aparece en esta vista.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para desactivar el monitoreo de un índice se ejecuta:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img27.5.png" width="525" height="160" alt="tfg" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Que sucede en v$object_usage para esta tabla luego de deshabilitar el monitoreo?</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img28.4.png" width="677" height="158" alt="rfc" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se puede observar que ya hay una fecha y hora del fin de monitoreo (END_MONITORING).</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">NOTA: El hecho de que un campo tenga un índice asociado, no significa que SIEMPRE se va a usar dicho índice para consultar por el campo. Eso lo decide el motor en su plan de ejecución.</span></p>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><span style="font-family: verdana, geneva, sans-serif;">Reconstrucción de índices.</span></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para reconstruir un índice, usamos el siguiente comando:<br /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img29.4.png" width="402" height="151" alt="rfcv" style="display: block; margin-left: auto; margin-right: auto;" /></span><span style="font-family: verdana, geneva, sans-serif;">Por que razón hay que reconstruir un índice? Con el movimiento de los datos, los índices van actualizándose, sufriendo fragmentación con el paso del tiempo. Al reconstruir un índice eliminamos esta fragmentación y hacemos que su información quede físicamente contigua.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Hay un tip para saber si un índice hay que reconstruirlo. Primero, ejecutemos la siguiente instrucción:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img30.4.png" width="546" height="163" alt="fvb" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Este comando analiza la estructura actual del índice y graba los resultados en la tabla INDEX_STATS. Por eso, después de ejecutar la anterior instrucción, se procede a consultar dicha tabla:<br /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img31.3.png" width="676" height="122" alt="tfg" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">El tip dice que es recomendable reconstruir el índice si:</span></p>
+<ul>
+<li><span style="font-family: verdana, geneva, sans-serif;">El HEIGHT es mayor a 4, o</span></li>
+<li><span style="font-family: verdana, geneva, sans-serif;">El ratio es mayor a 20.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">El cumplimiento de cualquiera de las dos condiciones anteriores significa que el índice tiene un grado alto de fragmentación.</span></p>
+<p><span style="text-decoration: underline;"><span style="font-family: verdana, geneva, sans-serif;">Tamaño de un índice.</span></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para consultar el tamaño de un índice, en megas, ejecutar la siguiente consulta:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img32.3.png" width="590" height="220" alt="rfc" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se puede observar que el índice EM_EDAD mide 0.0625 megas.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Videos:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><a href="https://youtu.be/CyN9hQufOLg">Gestion de Indices - Parte No. 1</a></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><a href="https://youtu.be/djubb6tb-fs">Gestión de Indices - Parte No. 2</a></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><a href="https://youtu.be/2DrGS7aY7AA">Gestión de Indices - Parte No. 3</a></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><a href="https://youtu.be/33i6659PKt0">Gestión de Indices - Parte No. 4</a></span></p>
+<p style="text-align: justify;"></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="merge.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="manejo_de_usuarios.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

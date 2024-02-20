@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>FLASHBACK | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-36"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li id="active"><a href="flashback.html" class="active no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="encriptacin_de_datos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="auditoria.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">FLASHBACK</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id25">
+<div class="iDevice emphasis0" >
+<div id="ta25_108_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La palabra "flashback", literalmente traducida al español, significa "retroceder", volver al pasado. Con esto en mente, Oracle implementa un concepto llamado Flashback. Para entender el concepto, miremos varios ejemplos. Oracle implementa diferentes tipos de Flashbacks.</span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">FLASHBACK DROP TABLE</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se puede utilizar Flashback Drop Table, para restaurar una tabla eliminada por error humano. Para ello hace uso de las funcionalidades de lo que se denomina la Papelera de Reciclaje, la cual funciona muy parecido a la papelera de Windows.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para ello, debemos activar la papelera de reciclaje. En este momento, la papelera está vacía.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img0.13.png" width="1069" height="163" alt="tgdt" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a crear un nuevo usuario, por medio del cual vamos a hacer el ejercicio.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img1.13.png" width="586" height="310" alt="tgb" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Desde el usuario recién creado, vamos a crear la siguiente tabla.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img2.13.png" width="715" height="360" alt="TGB" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, vamos a eliminar la tabla, haciendo un DROP TABLE.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img3.13.png" width="1035" height="45" alt="yhn" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a volver a consultar la papelera de reciclaje. Notamos que ya no está vacía. De hecho, en la columna OBJECT_NAME aparece la tabla borrada con un nombre asignado por Oracle, pero en la columna ORIGINAL_NAME aparece la tabla NOTAS recién borrada.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img4.13.png" width="914" height="148" alt="tre" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">De hecho, si le hacemos un SELECT a la tabla con el nombre que hay en OBJECT_NAME, aparecen los datos de la tabla NOTAS original.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img5.9.png" width="572" height="177" alt="und" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Y a través de una instrucción que existe en Oracle llamada FLASHBACK, podemos recuperar la tabla. El FLASHBACK TABLE TO BEFORE DROP permite recuperar una tabla que ha sido borrada con DROP, y lo hace a través del contenido de la papelera de reciclaje. Se puede mirar que la tabla NOTAS fue recuperada, incluyendo sus datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img6.10.png" width="474" height="216" alt="rgb" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En algún momento el usuario puede desactivar la papelera de reciclaje.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img7.9.png" width="691" height="33" alt="yn" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Miremos la implicación de tener la papelera de reciclaje desactivada. Creemos otra tabla, e insertemosle los datos de la tabla NOTAS.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img8.10.png" width="598" height="112" alt="ynh" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img9.7.png" width="621" height="152" alt="tgb" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Borremos la tabla recien creada, NOTAS_NEW. Y luego consultemos la papelera de reciclaje. Como está desactivada, no hay nada en ella, y por lo tanto no se puede hacer FLASHBACK.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img10.8.png" width="875" height="180" alt="6thj" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">De hecho, si intentamos ejecutar el FLASHBACK, sale un error.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img11.8.png" width="819" height="279" alt="rva" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por lo tanto, tener deshabilitada la papelera de reciclaje tiene estas implicaciones.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, vamos a hacer otro ejemplo para mirar como se manejan 2 versiones de una tabla. Vamos a volver a activar la papelera de reciclaje.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img12.7.png" width="698" height="43" alt="EDC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Borremos la tabla NOTAS, y consultemos la papelera de reciclaje.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img13.8.png" width="902" height="194" alt="ybh" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, creemos la misma tabla, NOTAS, pero con otra estructura y otros datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img14.7.png" width="734" height="38" alt="YBN" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img15.6.png" width="769" height="43" alt="YNB" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si miramos ahora el contenido de la tabla NOTAS, hay unos datos diferentes, y la tabla tiene otra estructura a la original.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img16.6.png" width="475" height="246" alt="YNH" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora si borramos la tabla NOTAS y consultamos la papelera, tenemos lo siguiente. Recuerden que al principio del ejercicio habiamos borrado la tabla NOTAS, con sus valores originales. Y ahora la volvimos a borrar, con los nuevos datos. Por eso, en la papelera hay dos registros.</span><span style="font-family: verdana, geneva, sans-serif;"></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img17.5.png" width="937" height="179" alt="plmk" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Verifiquemos el contenido de las tablas borradas y que se encuentran en la papelera de reciclaje:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img18.5.png" width="594" height="201" alt="olmp" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img19.5.png" width="571" height="171" alt="yhn" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para hacerle FLASHBACK a dos tablas que se llaman igual, y tienen datos y estructuras distintas, se tendría que hacer utilizando el nombre del objeto en la papelera, de la siguiente manera:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img20.5.png" width="758" height="135" alt="juhn" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, hagamos un SELECT a las tablas NOTAS01 y NOTAS02. Encontramos los datos originales. Y la papelera de reciclaje está ahora vacía.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img21.5.png" width="462" height="109" alt="unm" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img22.4.png" width="443" height="128" alt="tba" /></span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">FLASHBACK TABLE</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Usando Flashback Table, se puede recuperar un conjunto de tablas a un punto específico en el tiempo sin necesidad de realizar operaciones de recuperación de punto en el tiempo tradicionales.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para hacer este tipo de flashback, vamos a crear la siguiente tabla.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img23.4.png" width="792" height="33" alt="unm" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para hacer el ejemplo, consultemos el SCN (System Change Number) actual de la base de datos. El SCN es un consecutivo de todos los cambios que se van haciendo en la base de datos y en la instancia.</span></p>
+<p style="text-align: justify;"><img src="img24.5.png" width="448" height="180" alt="MNC" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">A continuación, insertémosle una tupla a la tabla recién creada, y luego volvamos a consultar el SCN.</span></p>
+<p style="text-align: justify;"><img src="img25.3.png" width="588" height="213" alt="MNC" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Luego, insertemos dos nuevas tuplas a la tabla, pero con cada tupla insertada, consultemos el SCN.</span></p>
+<p style="text-align: justify;"><img src="img26.3.png" width="584" height="209" alt="MNC" /></p>
+<p style="text-align: justify;"><img src="img27.2.png" width="587" height="209" alt="MNC" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Miremos los datos que hay grabados en la tabla. Tener en cuenta que cada vez que se grababa una tupla, el SCN iba aumentando.</span></p>
+<p style="text-align: justify;"><img src="img28.2.png" width="315" height="199" alt="MNCB" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Recapitulemos en los SCNs consultados en los diferentes momentos del ejercicio.</span></p>
+<table border="1" style="width: 100%; height: 105px;">
+<tbody>
+<tr style="height: 21px;">
+<td style="width: 50%; height: 21px; text-align: center;"><strong><span style="font-size: 12pt;">Momento</span></strong></td>
+<td style="width: 50%; height: 21px; text-align: center;"><strong><span style="font-size: 12pt;">SCN</span></strong></td>
+</tr>
+<tr style="height: 21px;">
+<td style="width: 50%; height: 21px;"><span style="font-size: 12pt;">Cuando la tabla estaba vacía</span></td>
+<td style="width: 50%; height: 21px; text-align: center;"><span style="font-size: 12pt;">2009135</span></td>
+</tr>
+<tr style="height: 21px;">
+<td style="width: 50%; height: 21px;"><span style="font-size: 12pt;">Artículo 100 grabado</span></td>
+<td style="width: 50%; height: 21px; text-align: center;"><span style="font-size: 12pt;">2009182</span></td>
+</tr>
+<tr style="height: 21px;">
+<td style="width: 50%; height: 21px;"><span style="font-size: 12pt;">Artículo 100 y 200 grabados</span></td>
+<td style="width: 50%; height: 21px; text-align: center;"><span style="font-size: 12pt;">2009201</span></td>
+</tr>
+<tr style="height: 21px;">
+<td style="width: 50%; height: 21px;"><span style="font-size: 12pt;">Artículo 10, 200 y 300 grabados</span></td>
+<td style="width: 50%; height: 21px; text-align: center;"><span style="font-size: 12pt;">2009292</span></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Supongamos que queremos restaurar la tabla al momento en el cual tenía grabado solo 2 artículos. Como vemos en la tabla anterior, el SCN que había inmediatamente después de grabar el segundo artículo era 2009201. Por lo tanto, la instrucción para hacer dicha recuperación es la siguiente:</span></p>
+<p style="text-align: justify;"><img src="img29.2.png" width="532" height="172" alt="mnc" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Luego miremos el contenido de la tabla. Tener en cuenta que la tabla tenía tres artículos grabados.</span></p>
+<p style="text-align: justify;"><img src="img30.2.png" width="343" height="157" alt="mnxx" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Acabamos de restaurar una tabla a un punto pasado del tiempo . A eso se refiere el FLASHBACK TABLE.</span></p>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">RESTAURACION DE LA BASE DE DATOS CON FLASHBACK</span></strong><strong><span style="font-family: verdana, geneva, sans-serif;"></span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para hacer esto, hay que poner la base de datos en modo flashback. Esto se debe hacer teniendo la instancia en modo MOUNT.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img36.1.png" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para hacer el ejercicio, vamos a crear una nueva tabla y le vamos a insertar algunas tuplas.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img34.1.png" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img35.1.png" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora consultemos el SCN, despues de haber insertado las tuplas:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img34.2.png" width="529" height="91" alt="mnl" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Luego, borremos todas las tuplas de la tabla recién creada, y volvamos a consultar el SCN:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img35.2.png" width="529" height="219" alt="mnnv" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a restaurar la base de datos a un punto del tiempo, utilizando el SCN. Bajemos la instancia y la volvemos a subir en modo MOUNT. Luego de eso, ejecutamos el siguiente comando. La idea con restaurar la base de datos al SCN 2021738 es restaurarla al momento cuando la tabla TABLA_FLASHBACK tenía 4 tuplas grabadas.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img36.2.png" width="426" height="62" alt="MKN" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Luego de esto, se abre la base de datos con la cláusula RESETLOGS y vemos que la tabla contiene la 4 tuplas. La cláusula RESETLOGS siempre se debe usar al abrir la base de datos, despues de haberla restaurado con FLASHBACK. Esto con el fin de resetear los Redo Log Files que fueron recientemente sincronizados.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img37.1.png" width="381" height="216" alt="mnc" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Videos:</span></p>
+<p><a href="https://youtu.be/hStbMpW4O18">Flashback DROP TABLE</a></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="encriptacin_de_datos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="auditoria.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

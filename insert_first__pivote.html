@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>INSERT FIRST - PIVOTE | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-21"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li class="current-page-parent"><a href="migracin_de_datos.html" class="current-page-parent daddy">MIGRACIÓN DE DATOS</a>
+   <ul>
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li id="active"><a href="insert_first__pivote.html" class="active no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="insert_all.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="merge.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">INSERT FIRST - PIVOTE</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id7">
+<div class="iDevice emphasis0" >
+<div id="ta7_109_2" class="block iDevice_content">
+<div class="exe-text"><p><span style="font-family: verdana, geneva, sans-serif;">A continuación abordaremos otros dos tipos de migración de datos: INSERT FIRST y PIVOTE.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">INSERT FIRST</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Abordemos este tipo de migración con un ejemplo. Creemos las siguientes tablas:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img0.15.png" width="481" height="370" alt="NHN" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a suponer que la empresa tiene una política de premiación a los empleados (bonificación en dinero, un viaje a un destino turístico o un televisor), según algunos criterios. Pero dentro de dicha política está establecido que un empleado no puede obtener varios premios, solamente a lo sumo uno.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img1.15.png" width="729" height="230" alt="MNC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img2.15.png" width="511" height="40" alt="MN" /><br /></span><span style="font-family: verdana, geneva, sans-serif;"></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La anterior migración funciona de la siguiente manera: recorre cada uno de los 6 empleados que hay grabados en la tabla origen. Y con cada empleado, verifica las condiciones de los WHEN, en el orden en que salen. Primero verifica si el empleado es mujer o se gana menos de 3000000 de pesos, es un empleado que se gana la bonificación en dinero. Al anterior empleado ya no se le validan las siguientes condiciones, simplemente se sale de la instrucción. Si el empleado no cumple la condición anterior, entonces se verifica si es mujer mayor de 44 años y si es así, este empleado se gana un viaje, y no se le valida la siguiente condición. Y si el empleado no cumple la anterior condición, se va por el ELSE, y se gana un televisor.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por eso es que se llama INSERT FIRST. Para cada dato origen valida las condiciones en el orden en que aparecen y la primera condición que cumpla se ejecuta y se sale de la instrucción, para continuar con el siguiente dato  origen.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Miremos cómo quedaron las tablas destino luego de la ejecución de la instrucción:</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 33.3333%;"><img src="img3.15.png" width="289" height="123" alt="ncb" /></td>
+<td style="width: 33.3333%;"><img src="img4.15.png" width="334" height="126" alt="mn" /></td>
+<td style="width: 33.3333%;"><img src="img5.11.png" width="309" height="113" alt="mn" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="font-family: verdana, geneva, sans-serif;">INSERT DE PIVOTE</span></strong></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Este tipo de INSERT no es una instrucción como tal. Es una implementación de lo que se conoce PIVOTE en visualización de datos: convertir filas en columnas y  viceversa.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Vamos a desarrollar el ejemplo. Supongamos la siguiente tabla de ventas, la cual no está normalizada. En ella se almacenan las ventas de un vendedor, en una semana del año específica, y en cada uno de los días de esa semana.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img6.12.png" width="461" height="233" alt="pl" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Insertemos la siguiente tupla en dicha tabla. Esta tupla significa que el vendedor con cédula 100, en la semana 6 del año, el lunes vendió 520, el martes 850, el miércoles 41, el jueves 0 y el viernes 56.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img7.11.png" width="443" height="169" alt="gb" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"></span>Por otra parte, vamos a crear la siguiente tabla, la cual está normalizada. Esta tabla puede almacenar los datos de la tabla anterior, y dichos datos tendrían el mismo significado. La diferencia es que una tupla de la tabla VENTASxSEMANA, corresponde a 5 tuplas en la tabla VENTAS_NORMALIZADA.</p>
+<p><img src="img8.11.png" width="453" height="130" alt="BSN" /></p>
+<p>Luego, ejecutemos el siguiente INSERT ALL incondicional. Al ejecutar esta instrucción, estamos implementando un pivote. Miremos por qué.</p>
+<p><img src="img9.10.png" width="819" height="225" alt="bcn" /></p>
+<p><img src="img10.9.png" width="585" height="31" alt="mn" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Como se puede observar, lo que se hizo fue pivotear (es decir, pasar de filas a columnas) las ventas de la tabla VENTASxSEMANA hacia la tabla VENTAS_NORMALIZADA.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img11.9.png" width="719" height="144" alt="MN" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img12.8.png" width="382" height="237" alt="MNC" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Video:</span></p>
+<p><a href="https://youtu.be/inZBB_6Bmlg">Migración de Datos - INSERT FIRST Y PIVOTE</a></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="insert_all.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="merge.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

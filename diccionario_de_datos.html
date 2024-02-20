@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>DICCIONARIO DE DATOS | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-29"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="diccionario_de_datos.html" class="active daddy">DICCIONARIO DE DATOS</a>
+   <ul>
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="perfiles.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejercicio_completo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">DICCIONARIO DE DATOS</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id55">
+<div class="iDevice emphasis0" >
+<div id="ta55_108_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Todo motor de base de datos tiene un diccionario de datos o, también llamado, catálogo del sistema. El diccionario de datos es el lugar donde se almacenan los metadatos de todos los objetos creados en la base de datos (tablas, vistas, índices, triggers, campos, memoria, etc.). Entiéndase por metadatos, datos de gestión acerca de estos objetos. Por ejemplo, algunos ejemplos de metadatos de una tabla pueden ser su nombre, fecha y hora de creación, nombre de usuario propietario de la tabla, nombre del creador de la tabla, dirección IP desde donde se creó la tabla, cantidad de tuplas grabadas en la tabla, etc. Estos metadatos se constituyen en un insumo muy valioso para que el Administrador de la Base de Datos pueda hacer, de una manera eficiente, su labor.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">El diccionario de datos en Oracle se compone de vistas y tablas base. Las vistas son creadas a partir de las tablas base.</span><br /><span style="font-family: verdana, geneva, sans-serif;">Generalmente los usuarios tienen acceso a las vistas, no a las tablas base. Los nombres de dichas vistas tienen unos prefijos que significan lo siguiente:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">USER: Objetos de mi propiedad.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">ALL: Objetos a los cuales tengo acceso.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">DBA: Objetos del sistema.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">V$: Vistas de rendimiento.</span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Hay una vista muy importante dentro del diccionario de datos de Oracle que se llama DICTIONARY. Esta vista tiene el inventario de tablas y vistas que componen el diccionario de datos y, de cada una de ellas, tiene una breve descripción de lo que almacenan.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si miramos la estructura de dicha vista, vemos que tiene solo dos campos: el nombre de la vista y su descripción. También observemos que el diccionario de datos de Oracle está compuesto de muchas vistas. En este caso, y puede variar de instalación en instalación, tenemos 4666 vistas, lo cual demuestra la dimensión de dicho diccionario de datos.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img0.21.png" width="375" height="221" alt="tbv" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img1.22.png" width="295" height="195" alt="ybn" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos, ahora, a mirar cuántas vistas hay de cada tipo (USER_, ALL_, DBA_, V$_). Por ejemplo, hay 1006 vistas que tienen metadatos acerca del sistema global, 479 vistas que tienen metadatos acerca de los objetos propios del usuario, etc.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img3.21.png" width="363" height="180" alt="VBN" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img4.21.png" width="362" height="187" alt="TBN" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+<tr>
+<td style="width: 50%;"><img src="img5.17.png" width="352" height="187" alt="VVV" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img6.18.png" width="371" height="193" alt="VBN" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Podemos mirar un ejemplo de lo que hay en DICTIONARY. Podemos observar, por ejemplo, que una de las vistas del diccionario de datos se llama USER_TABLES y que, según su descripción, corresponde a los metadatos de las tablas propias del usuario.</span></p>
+<p><img src="img2.21.png" width="863" height="284" alt="mnnn" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si miramos la estructura de dicha vista, con DESC USER_TABLES, nos damos cuenta que tiene muchos campos. Muchas de las vistas del diccionario de datos tienen esta característica, por lo cual es una muestra más de la dimensión de lo que está grabado allí.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para mirar más en detalle, por ejemplo, lo que hay en USER_TABLES, vamos a crear un nuevo usuario llamado DICCION. A partir de este usuario, vamos a crear una nueva tabla, vamos a insertarle algunas tuplas. Y luego, vamos a consultar algunos metadatos de los objetos que se acabaron de crear.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img7.17.png" width="418" height="236" alt="mnnv" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img8.16.png" width="386" height="294" alt="mnnnc" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a mirar la vista USER_TABLES, estando conectados con el usuario DICCION. Podemos observar que en dicha vista queda grabada el nombre de la tabla, EMPLEADO1, su ubicación a nivel de tablespace (USERS), entre otros datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img9.15.png" width="821" height="111" alt="MNC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si necesitamos, por ejemplo, la fecha de creación de la tabla, podemos realizar la siguiente consulta. Nótese que para dicho fin hay que utilizar la vista USER_OBJECTS. Mientras que la vista USER_TABLES se dedica exclusivamente a almacenar los metadatos de las tablas del usuario, la vista USER_OBJECTS almacena metadatos de todos los objetos del usuario (tablas, vistas, triggers, índices, etc.).</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Miremos ahora la estructura detallada de una tabla, a nivel de diccionario de datos. De estas vista es de donde extrae la información el comando DESC.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img10.14.png" width="515" height="257" alt="mnc" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img11.14.png" width="344" height="220" alt="UNC" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Otras vistas importantes del diccionario de datos son las siguientes:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">USER_CONSTRAINTS: Constraints de los objetos del usuario.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">USER_CONS_COLUMNS: Columnas o campos que tienen constraints.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">USER_CATALOG: Tablas, vistas, sinónimos y secuencias del usuario.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">USER_SEQUENCES: Secuencias del usuario.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">USER_SYNONYMS: Sinónimos del usuario.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">USER_INDEXES: Índices del usuario.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">USER_IND_COLUMNS: Columnas que tienen índice.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">USER_VIEWS: Vistas del usuario.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">USER_TABLESPACES: Tablespaces creados por el usuario.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">DBA_ROLES: Roles definidos en el sistema.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">DBA_PROFILES: Perfiles definidos en el sistema.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">DBA_USERS: Usuarios del sistema.</span></li>
+</ul>
+<p><span style="font-family: verdana, geneva, sans-serif;">A una tabla o columna, se le puede grabar comentarios descriptivos, de la siguiente manera. </span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img12.13.png" width="516" height="330" alt="JMC" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Para consultar dichos comentarios, tenemos las vistas mostradas a continuación.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img13.13.png" width="433" height="181" alt="cvb" /></td>
+<td style="width: 50%;"><img src="img14.12.png" width="439" height="142" alt="vbn" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por otra parte, es muy útil buscar las vistas que tengan que ver con algún tema en particular. Por ejemplo, si necesitamos buscar las vistas del diccionario de datos que tengan metadatos acerca de los triggers, podemos ejecutar la siguiente consulta:</span></p>
+<p><img src="img15.11.png" width="875" height="271" alt="TBG" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Es importante mencionar que las vistas cuyo nombre comienza por V$ se denominan vistas dinámicas o de rendimiento. En dichas vistas se almacenan metadatos que varían permanentemente de valor. Por ejemplo, las vistas que tienen que ver con el uso de la memoria SGA o del estado actual de la base de datos, tal y como se ve a continuación.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img16.11.png" width="396" height="222" alt="nnn" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img17.10.png" width="459" height="118" alt="vbn" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Consultas útiles para el DBA</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La labor del DBA exige sacar provecho de la información que hay en el diccionario de datos. Generalmente, el DBA va construyendo una biblioteca de consultas útiles que le sirven para fines específicos. A continuación se muestran una serie de consultas útiles para la labor del DBA.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img18.10.png" width="341" height="188" alt="VBN" /></td>
+<td style="width: 50%;"></td>
+</tr>
+</tbody>
+</table>
+<p></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="perfiles.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="ejercicio_completo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>BACKUP INCREMENTAL | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-49"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li class="current-page-parent"><a href="backups.html" class="current-page-parent daddy">BACKUPS</a>
+   <ul>
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li id="active"><a href="backup_incremental.html" class="active no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="backup_archivelog.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="restores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">BACKUP INCREMENTAL</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id43">
+<div class="iDevice emphasis0" >
+<div id="ta43_112_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para entender qué es un backup incremental, repasemos los que es un backup completo. En el backup completo se hace copia de todos los bloques de datos. En la imagen, se puede observar que se le hace copia a los 3 bloques de datos que tiene la base de datos en ese momento.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En RMAN, cuando vamos a hacer un backup completo, con la intención de relacionarlo con una serie de backups incrementales posteriores, se hace un backup denominado Incremental de Level 0. </span></p>
+<p><img src="img0.6.png" width="612" height="416" alt="MCMMC" /></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">En Oracle, un backup incremental es una copia de los datos que se han actualizado desde el último backup hecho. Por eso, un backup incremental tiene un tamaño mucho menor a un tamaño completo.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Existen dos tipos de backups incrementales:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Acumulativo - Level 1: Hace copia de los bloques modificados desde el último incremental de Level 0.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Diferencial - Level 1: Hace copia de los bloques modificados desde el incremental.</span></li>
+</ul>
+<p><span style="font-family: verdana, geneva, sans-serif;">Generalmente, un backup acumulativo es de tamaño mayor a uno diferencial.</span></p>
+<p><img src="img1.6.png" width="891" height="402" alt="mcxncn" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En la siguiente imagen se ve un ejemplo de una política de backup, donde se combinan backups completos, acumulativos y diferenciales. Vamos a suponer que un domingo por la noche se hace el backup completo (FULL BACKUP LEVEL 0), el lunes, martes y miercoles se hace un backup diferencial, el jueves se hace un backup acumulativo, el viernes y sabado se hace un backup diferencial. Esa podría ser la política de backup semanal para una base de datos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En este caso, es bueno explicar que cuando el jueves se hace el backup acumulativo, los 3 backups diferenciales anteriores a él ya no sirven para nada. Esos 3 backups ya están incluidos en el acumulativo hecho.</span></p>
+<p><img src="img3.7.png" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Supongamos que tenemos dicha política de backup y el sábado en la mañana se dañan los Data Files de la base de datos. Lo que se hace para recuperar la base de datos hasta el momento del daño es lo siguiente:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se restaura el FULL BACKUP LEVEL 0 hecho el domingo anterior, luego se le restaura el backup acumulativo hecho el jueves, y a esto se le restaura el backup diferencial del viernes. Hasta ahi, tenemos restaurada la base de datos a como estaba el viernes en la mañana. Para recuperar los datos que habían entre este último backup diferencial y el momento del daño, se restauran los datos de los Redo Log Files y los Archivelog. Este proceso se va a ver, en detalle, el el módulo de Restores.</span></p>
+<p><img src="img2.6.png" width="1040" height="433" alt="mcmcm" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora hagamos ejemplos de backups incrementales en RMAN:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para ambientar el ejemplo, ejecutemos las siguientes instrucciones:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">CREATE TABLESPACE DATOS DATAFILE 'C:\app\jorgebedoya\oradata\CURSO1\DATOS.DBF' SIZE 500M;</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">CREATE TABLE EJEMPLO(</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">    CODIGO NUMBER GENERATED BY DEFAULT ON NULL AS IDENTITY,</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">    DATOS VARCHAR2(100))</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">TABLESPACE DATOS;</span><br /><br /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">INSERT INTO EJEMPLO(DATOS) VALUES ('AAAAAAAAAAAAAAAAAAA');</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">begin</span><br /><span style="font-family: verdana, geneva, sans-serif;">for i in 1..20 loop</span><br /><span style="font-family: verdana, geneva, sans-serif;">insert into ejemplo(datos) select datos from ejemplo;</span><br /><span style="font-family: verdana, geneva, sans-serif;">end loop;</span><br /><span style="font-family: verdana, geneva, sans-serif;">commit;</span><br /><span style="font-family: verdana, geneva, sans-serif;">end;</span><br /><span style="font-family: verdana, geneva, sans-serif;">Luego de ejecutar las anteriores instrucciones, miremos con cuantas tuplas quedó la tabla EJEMPLO:</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img7.5.png" width="997" height="234" alt="mmm" />vamos a Ahora, vamos a hacer un primer backup de LEVEL 0.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img4.8.png" width="1060" height="315" alt="MCMCMC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Podemos observar que efectivamente Oracle identifica dicho backup como incremental nivel 0, y que dentro del backup hecho está la copia al Data File del tablespace DATOS, DATOS.DBF.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Al hacer un LIST BACKUP, también podemos verificar que el backup es incremental de nivel 0.</span></p>
+<p style="text-align: justify;"><img src="img8.6.png" width="1069" height="240" alt="bb" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, a la tabla DATOS, le vamos a insertar nuevas tuplas, ejecutando el script anterior, pero solo dos veces.</span></p>
+<p><img src="img6.5.png" width="1001" height="168" alt="mmm" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Lo anterior lo hacemos para simular trabajo entre un backup level 0 y el primer diferencial.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Al hacer COUNT(*) de las tuplas de la tabla EJEMPLO, obtenemos:</span></p>
+<p><img src="img8.5.png" width="472" height="222" alt="fff" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, hagamos un primer backup diferencial, es decir, LEVEL 1.</span></p>
+<p><img src="img9.5.png" width="1069" height="243" alt="mmm" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Podemos notar que se ha demorado menos en hacer el backup.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a comparar el tamaño de este backup diferencial, con respecto al completo. Lo hacemos con LIST BACKUP.</span></p>
+<p><img src="img10.3.png" width="1069" height="241" alt="MVMMV" /></p>
+<p><img src="img11.3.png" width="1069" height="226" alt="MMM" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Como podemos observar en las dos imagenes anteriores, mientras el backup completo mide 1.27 gigas, el backup diferencial mide 141.71 megas. Y también se puede observar que el último backup es de tipo incremental, level 1, y el anterior es incremental, level 0.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a actualizar 1000 tuplas de la tabla EJEMPLO, ejecutando la siguiente instrucción:</span></p>
+<p><img src="img12.4.png" width="650" height="209" alt="mmm" /></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">Y hagamos un backup de tipo acumulativo.</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;">lLuego hagamos un bacakup ACUMULATIVO:</span></p>
+<p><img src="img13.5.png" width="1069" height="269" alt="mmm" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Comparemos el tamaño de este backup acumulativo con respecto al diferencial:</span></p>
+<p><img src="img14.5.png" width="1069" height="275" alt="MAS" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Podemos observar que el acumulativo tiene un tamaño mayor al diferencial. En este caso, es poca la diferencia, pero es porque no hemos hecho mayores cambios entre el último diferencial y el acumulativo.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora hagamos de nuevo un DIFERENCIAL.</span></p>
+<p><img src="img15.4.png" width="1069" height="34" alt="mmm" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">El tamaño de este último backup es muy pequeño ya que no se ha hecho nada desde el último backup. En la imagen siguiente, podemos observar que dicho backup mide 280 kilobyes.</span></p>
+<p><img src="img16.4.png" width="1031" height="195" alt="mmmm" /></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Hasta ahora, en el ejemplo, se ha hecho lo siguiente:</span></p>
+<ul style="text-align: justify;">
+<li><span style="font-family: verdana, geneva, sans-serif;">FULL LEVEL 0</span></li>
+<li><span style="font-family: verdana, geneva, sans-serif;">DIFERENCIAL</span></li>
+<li><span style="font-family: verdana, geneva, sans-serif;">ACUMULATIVO</span></li>
+<li><span style="font-family: verdana, geneva, sans-serif;">DIFERENCIAL</span></li>
+</ul></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="backup_archivelog.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="restores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

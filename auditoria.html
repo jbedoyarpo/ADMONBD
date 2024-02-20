@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>AUDITORIA | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-37"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="arquitectura_de_oracle.html" class="daddy">ARQUITECTURA DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="manejo_de_memoria.html" class="no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li id="active"><a href="auditoria.html" class="active no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="flashback.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="gestin_de_lobs.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">AUDITORIA</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id54">
+<div class="iDevice emphasis0" >
+<div id="ta54_112_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por diferentes motivos, en ocasiones, es importante poder consultar qué movimientos se han hecho dentro de la base de datos. Además, saber algunos datos importantes de estos movimientos: quién los hizo, cuándo fue hecho, etc. A esto es lo que conocemos como Auditoría de la Base de Datos. Oracle implementa esta auditoría. Vamos a ver a continuación de qué manera lo hace.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En Oracle existen tres tipos de auditoría:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Auditoría de Bases de Datos</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Auditoría de Objetos</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Auditoría de Granularidad Fina</span><span style="font-family: verdana, geneva, sans-serif;"></span></li>
+</ul>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para que Oracle grabe los registros de auditoría, debe tener el parámetro “audit_trail” activado. Por defecto, dicho parámetro, en el campo VALUE, tiene el valor NONE. Cuando está en NONE, la auditoría está desactivada. Para consultar si la auditoría está activada o no, se ejecuta el siguiente comando y se revisa el valor de la columna VALUE. En este caso, vemos que la auditoría está deshabilitada. Para activar la auditoría, modificamos el valor de dicho parámetro con ALTER SYSTEM.<br /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Y se debe reiniciar el servidor (shutdown / startup) para que tome efecto el cambio.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img0.20.png" width="408" height="180" alt="HBN" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img1.21.png" width="428" height="198" alt="YBC" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><strong><span style="font-family: verdana, geneva, sans-serif;">Auditoría de Base de Datos</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La vista que contiene las trazas de auditoría es SYS.AUD$. En este momento, dicha vista se encuentra vacía, ya que acabamos de activar la auditoría. Para hacer el ejercicio, se va a crear el usuario llamado USER200 y se le dará  el rol de DBA.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img2.20.png" width="436" height="157" alt="eee" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%; text-align: center;"><img src="img3.20.png" width="464" height="241" alt="YBN" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para auditar los SELECTs e INSERTs que haga el usuario USER200, ejecutemos lo siguiente. La cláusula BY ACCESS es para decirle a Oracle que por cada acción auditada, grabe el registro de auditoría. También podemos mirar qué instrucciones se le van a auditar al usuario USER200.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img4.20.png" width="414" height="175" alt="unc" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img5.16.png" width="527" height="240" alt="ybn" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Vamos a conectarnos con el usuario USER200 y vamos a realizar un SELECT sobre una tabla de su esquema. Es decir, primero creemos una tabla, llamada EMPLEADO,  en el esquema de USER200 y luego le hacemos SELECT. Vamos a comprobar que la sentencia SELECT, hecha por USER200, haya quedado registrada en la vista DBA_AUDIT_TRAIL.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img6.17.png" width="343" height="258" alt="UNM" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img7.16.png" width="527" height="242" alt="omn" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Se puede ver que queda grabada, en la vista de auditoria, el hecho de que el usuario USER200 hizo un SELECT sobre la tabla EMPLEADO.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En este tipo de auditoría no queda registrada la instrucción SQL completa que dio pie para el registro de auditoría, solamente dice que instrucción se ejecutó (INSERT, SELECT, etc.).</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, hagamos la prueba insertando datos desde el usuario USER200. Se observa que se grabaron dos trazos de auditoría, correspondientes a los dos INSERTS que hizo el usuario USER200.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img8.15.png" width="359" height="300" alt="HN" /></td>
+<td style="width: 50%;"><img src="img9.14.png" width="527" height="268" alt="MNC" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si queremos desactivarle al usuario USER200 la auditoria sobre la instrucción SELECT, se ejecuta la siguiente instrucción. La auditoría, para ese usuario, queda desactivada a partir de la proxima conexion .</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para comprobar que ya no se le va a auditar los SELECTs al usuario USER200, ejecutamos la instrucción siguiente (derecha):</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img10.13.png" width="422" height="174" alt="BGN" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img11.13.png" width="482" height="281" alt="vfb" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="font-family: verdana, geneva, sans-serif;">Auditoría de Objetos</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">La Auditoría de objetos, registra los cambios por operaciones efectuadas por los usuarios en determinadas tablas.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Miremos un ejemplo para entender el concepto. Para hacer el ejercicio, vamos a activar la auditoria relacionada con las </span><span style="font-family: verdana, geneva, sans-serif;">acciones SELECT, INSERT y UPDATE, sobre el objeto USER200.EMPLEADO. Luego consultemos los objetos auditados. Se puede observar que se tiene activada la auditoría en las cuatro operaciones del CRUD.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img12.12.png" width="391" height="209" alt="RCV" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img13.12.png" width="479" height="126" alt="ncb" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Creemos un nuevo usuario, llamado MATEO1, con permisos de hacer consultas e inserciones sobre la table EMPLEADO de USER200. Luego de esto, con el usuario MATEO1, insertar datos en EMPLEADO y consultarlos.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Miremos como quedó grabado el registro de auditoría sobre el objeto USER200.EMPLEADO, por parte del usuario MATEO. Podemos observar que el registro de auditoría nos dice que el usuario MATEO le hizo dos INSERTs y un SELECT a la tabla EMPLEADO, del esquema USER200. Además, dice la fecha y hora en que se hicieron las operaciones.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img14.11.png" width="452" height="351" alt="tvb" /></td>
+<td style="width: 50%;"><img src="img15.10.png" width="442" height="254" alt="YBC" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Para desactivar todas las opciones de auditoría que tenemos configuradas, ejecutamos el comando NOAUDIT ALL ON DEFAULT.</span><br /><br /><strong><span style="font-family: verdana, geneva, sans-serif;">Auditoría de Granularidad Fina</span></strong></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si queremos que la auditoria hecha por Oracle grabe la instrucción SQL completa ejecutada por un usuario, utilizamos este tipo de auditoría.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En el ejemplo que vamos a desarrollar se auditan las sentencias INSERT, UPDATE, DELETE, y SELECT en la tabla USER200.EMPLEADO, controlando cualquier acceso a la columna APELLIDO pertenecientes a los empleados con apellido GOMEZ. Para ello, a la tabla EMPLEADO le debemos adicionar el campo APELLIDO. Y vamos a cerciorarnos de que algunos de los empleados grabados en la tabla tengan el apellido GOMEZ.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Este tipo de auditoría se activa, creando una política, tal y como se ve en la imagen. La política dice que se active la auditoría del CRUD en la tabla EMPLEADO del esquema USER200, pero solamente cuando el valor del campo APELLIDO es GOMEZ.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Observar que se ejecuta un procedimiento de Oracle llamado DBMS_FGA (FGA: Fine Granularity Audit).</span></p>
+<table border="1" style="width: 82.2042%;" height="291">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img16.10.png" width="368" height="280" alt="NBC" style="display: block; margin-left: auto; margin-right: auto;" /></td>
+<td style="width: 50%;"><img src="img17.9.png" width="502" height="257" alt="ybc" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Ahora, desde otro usuario que tenga permisos (MATEO), vamos a insertar dos nuevas tuplas en la tabla EMPLEADO, una tupla de un empleado cuyo apellido es GOMEZ, y otra tupla con un empleado de apellido LOPEZ.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Luego de eso, consultemos los datos de la auditoría de granularidad fina.</span></p>
+<table border="1" style="width: 100%;">
+<tbody>
+<tr>
+<td style="width: 50%;"><img src="img18.9.png" width="418" height="335" alt="vcb" /></td>
+<td style="width: 50%;"><img src="img19.9.png" width="551" height="110" alt="bcb" /></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img20.8.png" width="999" height="32" alt="YBC" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;"><img src="img21.8.png" width="684" height="43" alt="BCB" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Como podemos apreciar, la instrucción INSERT del empleado GOMEZ quedó registrada en la auditoria, mas el del empleado de apellido LOPEZ no quedó registrado. Y se puede observar que la instrucción INSERT completa queda registrada en el campo SQL_TEXT de la vista DBA_FGA_AUDIT_TRAIL.</span><br /><br /><span style="font-family: verdana, geneva, sans-serif;">Se llama auditoría de granularidad fina porque entrega muchos mas detalles acerca de las instrucciones ejecutadas: cuándo se ejecutó, qué usuario la ejecutó, desde qué equipo se ejecutó, a través de qué política se grabó, etc.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Si queremos eliminar la política de auditoría anterior, ejecutamos lo siguiente:</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img22.7.png" width="608" height="295" alt="unb" style="display: block; margin-left: auto; margin-right: auto;" /></span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Por último, es conveniente mencionar que para manejar la auditoría, Oracle maneja varias vistas del catálogo. La explicación de dichas vistas son mostradas a continuación y son extraidas de http://www.dba-oracle.com/t_dba_audit_trail.htm</span></p>
+<p><span style="font-family: verdana, geneva, sans-serif;"><img src="img23.7.png" width="582" height="319" alt="cvb" style="display: block; margin-left: auto; margin-right: auto;" /></span></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="flashback.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="gestin_de_lobs.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

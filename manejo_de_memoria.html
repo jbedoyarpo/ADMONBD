@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>MANEJO DE MEMORIA | ADMINISTRACIÓN DE BASES DE DATOS </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jorge Iván Bedoya Restrepo" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">ADMINISTRACIÓN DE BASES DE DATOS</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">ADMINISTRACIÓN DE BASES DE DATOS</a></li>
+   <li><a href="rol_del_dba.html" class="no-ch">ROL DEL DBA</a></li>
+   <li><a href="generalidades_de_oracle.html" class="daddy">GENERALIDADES DE ORACLE</a>
+   <ul class="other-section">
+      <li><a href="un_poco_de_historia.html" class="no-ch">UN POCO DE HISTORIA</a></li>
+      <li><a href="pl__sql.html" class="no-ch">PL / SQL</a></li>
+      <li><a href="ambientes_de_trabajo.html" class="daddy">AMBIENTES DE TRABAJO</a>
+      <ul class="other-section">
+         <li><a href="sql_plus.html" class="no-ch">SQL PLUS</a></li>
+         <li><a href="sql_developer.html" class="no-ch">SQL DEVELOPER</a></li>
+         <li><a href="otros_ambientes.html" class="no-ch">OTROS AMBIENTES</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="arquitectura_de_oracle.html" class="current-page-parent daddy">ARQUITECTURA DE ORACLE</a>
+   <ul>
+      <li id="active"><a href="manejo_de_memoria.html" class="active no-ch">MANEJO DE MEMORIA</a></li>
+      <li><a href="manejo_de_procesos.html" class="no-ch">MANEJO DE PROCESOS</a></li>
+      <li><a href="arquitectura_multitenant.html" class="no-ch">ARQUITECTURA MULTITENANT</a></li>
+   </ul>
+   </li>
+   <li><a href="instrucciones_varias_de_oracle.html" class="no-ch">INSTRUCCIONES VARIAS DE ORACLE</a></li>
+   <li><a href="vistas.html" class="daddy">VISTAS</a>
+   <ul class="other-section">
+      <li><a href="vistas_comunes.html" class="no-ch">VISTAS COMUNES</a></li>
+      <li><a href="vistas_materializables.html" class="no-ch">VISTAS MATERIALIZABLES</a></li>
+   </ul>
+   </li>
+   <li><a href="secuencias.html" class="no-ch">SECUENCIAS</a></li>
+   <li><a href="migracin_de_datos.html" class="daddy">MIGRACIÓN DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="insert_all.html" class="no-ch">INSERT ALL</a></li>
+      <li><a href="insert_first__pivote.html" class="no-ch">INSERT FIRST - PIVOTE</a></li>
+      <li><a href="merge.html" class="no-ch">MERGE</a></li>
+   </ul>
+   </li>
+   <li><a href="manejo_de_ndices.html" class="no-ch">MANEJO DE ÍNDICES</a></li>
+   <li><a href="manejo_de_usuarios.html" class="daddy">MANEJO DE USUARIOS</a>
+   <ul class="other-section">
+      <li><a href="usuarios_y_privilegios.html" class="no-ch">USUARIOS Y PRIVILEGIOS</a></li>
+      <li><a href="roles.html" class="no-ch">ROLES</a></li>
+      <li><a href="perfiles.html" class="no-ch">PERFILES</a></li>
+   </ul>
+   </li>
+   <li><a href="diccionario_de_datos.html" class="daddy">DICCIONARIO DE DATOS</a>
+   <ul class="other-section">
+      <li><a href="ejercicio_completo.html" class="no-ch">EJERCICIO COMPLETO</a></li>
+      <li><a href="consultas_tiles_para_el_dba.html" class="no-ch">CONSULTAS ÚTILES PARA EL DBA</a></li>
+   </ul>
+   </li>
+   <li><a href="optimizacin_de_consultas.html" class="no-ch">OPTIMIZACIÓN DE CONSULTAS</a></li>
+   <li><a href="buenas_prcticas_en_sql.html" class="no-ch">BUENAS PRÁCTICAS EN SQL</a></li>
+   <li><a href="backups.html" class="daddy">BACKUPS</a>
+   <ul class="other-section">
+      <li><a href="undo_redologs_y_archivelogs.html" class="no-ch">UNDO, REDOLOGS y ARCHIVELOGS</a></li>
+      <li><a href="rman.html" class="no-ch">RMAN</a></li>
+      <li><a href="backup_completo.html" class="no-ch">BACKUP COMPLETO</a></li>
+      <li><a href="backup_tablespaces.html" class="no-ch">BACKUP TABLESPACES</a></li>
+      <li><a href="backup_controlfile.html" class="no-ch">BACKUP CONTROLFILE</a></li>
+      <li><a href="backup_archivelog.html" class="no-ch">BACKUP ARCHIVELOG</a></li>
+      <li><a href="backup_incremental.html" class="no-ch">BACKUP INCREMENTAL</a></li>
+   </ul>
+   </li>
+   <li><a href="restores.html" class="daddy">RESTORES</a>
+   <ul class="other-section">
+      <li><a href="introduccion.html" class="no-ch">INTRODUCCION</a></li>
+      <li><a href="restore_base_de_datos_completa.html" class="no-ch">RESTORE BASE DE DATOS COMPLETA</a></li>
+      <li><a href="restore_de_tablespace.html" class="no-ch">RESTORE DE TABLESPACE</a></li>
+      <li><a href="restore_hasta_un_tiempo_t.html" class="no-ch">RESTORE HASTA UN TIEMPO t</a></li>
+   </ul>
+   </li>
+   <li><a href="encriptacin_de_datos.html" class="no-ch">ENCRIPTACIÓN DE DATOS</a></li>
+   <li><a href="flashback.html" class="no-ch">FLASHBACK</a></li>
+   <li><a href="auditoria.html" class="no-ch">AUDITORIA</a></li>
+   <li><a href="gestin_de_lobs.html" class="no-ch">GESTIÓN DE LOBs</a></li>
+   <li><a href="tablas_particionadas.html" class="no-ch">TABLAS PARTICIONADAS</a></li>
+   <li><a href="gestin_de_almacenamiento.html" class="no-ch">GESTIÓN DE ALMACENAMIENTO</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="arquitectura_de_oracle.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="manejo_de_procesos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">MANEJO DE MEMORIA</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id32">
+<div class="iDevice emphasis0" >
+<div id="ta32_112_2" class="block iDevice_content">
+<div class="exe-text"><p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">En este módulo, se aborda las diferentes maneras que tiene Oracle para administrar la memoria que se encuentra incluída en la instancia de la base de datos: SGA, PGA. Data Buffer Cache, Shared Pool, Redolog Buffer, entre otros.</span></p>
+<p style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Oracle tiene dos maneras de gestionar la memoria de su instancia:</span></p>
+<ul>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Gestión automática: Oracle, automáticamente, va haciendo crecer la memoria, según necesidad.</span></li>
+<li style="text-align: justify;"><span style="font-family: verdana, geneva, sans-serif;">Gestión manual: El DBA debe estar pendiente de que la memoria no se llene.</span></li>
+</ul>
+<p><span style="font-family: verdana, geneva, sans-serif;">Vamos a abordar estos dos tipos de gestión de memoria. </span></p>
+<table border="1" style="width: 100%; height: 333px;">
+<tbody>
+<tr style="height: 225px;">
+<td style="width: 50%; text-align: justify; height: 225px;">
+<p><span style="font-size: 12pt;">Para saber cual es el nombre de la instancia, podemos ejecutar el comando mostrado.</span></p>
+<p><span style="font-size: 12pt;">En nuestro caso, la instancia se llama ORCL.</span></p>
+</td>
+<td style="width: 50%; text-align: justify; height: 225px;"><img src="img0.1.png" width="401" height="220" alt="instancia" /></td>
+</tr>
+<tr style="height: 108px;">
+<td style="width: 50%; text-align: justify; height: 108px;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si queremos conocer dónde está ubicado el archivo de parámetros de configuración, podemos hacer la siguiente consulta sobre la vista V$PARAMETER.</span></p>
+</td>
+<td style="width: 50%; text-align: justify; height: 108px;"><img src="img1.2.png" width="527" height="103" alt="spfile" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Si deseamos mirar cómo está gestionando la memoria Oracle, podemos ejecutar los siguientes comandos.</span></p>
+<p><span style="font-size: 12pt;">En este primer comando, vemos que el parámetro denominado memory_max_target está configurado con 3008 megas.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%; text-align: justify;"><img src="img2.2.png" width="527" height="136" alt="sga" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Y en este segundo comando, el parámetro memory_target está configurado con 2800 megas.</span></p>
+<p><span style="font-size: 12pt;">Cuando los dos anteriores valores están en cero (0), significa que la gestión está configurada en forma manual. En este caso, se tiene configurada la gestión automática de memoria.</span></p>
+</td>
+<td style="width: 50%; text-align: justify;"><img src="img3.3.png" width="527" height="152" alt="sga1" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Si se quiere mirar con qué espacio está configurada la SGA y la PGA, ejecutamos los siguientes comandos.</span></p>
+<p><span style="font-size: 12pt;"></span></p>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%; text-align: justify;"><img src="img4.3.png" width="527" height="79" alt="sgapga" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Para mirar el contenido del Shared Pool, lugar donde se almacenan las instrucciones SQL ya parseadas y ejecutadas, podemos hacer lo siguiente.</span></p>
+<p><span style="font-size: 12pt;">Vamos a ejecutar un SELECT sobre una tabla de trabajo. Y luego vamos a consultar el contenido del Shared Pool.</span></p>
+<p><span style="font-size: 12pt;">Vemos que, en la fila No. 7 del resultado, la sentencia SELECT ejecutada se encuentra almacenada allí.</span></p>
+<p><span style="font-size: 12pt;">La vista que se usa para mirar el contenido del Shared Pool es V$SQL. Es una vista dinámica, ya que va cambiando de acuerdo a las instrucciones SQL ejecutadas.</span></p>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%; text-align: justify;"><img src="img5.2.png" width="527" height="251" alt="shared" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">Con respecto al contenido del Data Buffer Cache, el cual almacena el resultado de las instrucciones SQL ejecutadas, podemos hacer el siguiente ejercicio.</span></p>
+<p><span style="font-size: 12pt;">Ejecutemos la siguiente instrucción. Vemos que la primera vez que se ejecuta la instrucción, ésta se demora 28.412 segundos para dar el resultado.</span></p>
+<p><span style="font-size: 12pt;"></span></p>
+<p><span style="font-size: 12pt;"> </span></p>
+</td>
+<td style="width: 50%; text-align: justify;"><img src="img6.1.png" width="434" height="225" alt="ffff" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p><span style="font-size: 12pt;">En cambio, la segunda vez que se ejecuta la misma instrucción, se demora 0.23 segundos en retornar el resultado.</span></p>
+<p><span style="font-size: 12pt;">Esto es debido a que en la segunda ejecución, el resultado de la consulta ya estaba almacenada en el Data Buffer Cache, el sistema no tuvo que volver al disco duro a recuperar los datos.</span></p>
+</td>
+<td style="width: 50%; text-align: justify;"><img src="img7.1.png" width="432" height="235" alt="BUFFER" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si se desea limpiar el Data Buffer Cache y/o el Shared Pool, podemos ejecutar las siguientes instrucciones.</span></p>
+</td>
+<td style="width: 50%; text-align: justify;"><img src="img8.1.png" width="474" height="94" alt="borrar" /></td>
+</tr>
+<tr>
+<td style="width: 50%; text-align: justify;">
+<p style="text-align: justify;"><span style="font-size: 12pt;">Si se desea consultar el contenido del Data Buffer Cache en un momento dado, podemos consultar el link que se muestra.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;"><a href="http://www.dba-oracle.com/art_builder_buffer.htm">http://www.dba-oracle.com/art_builder_buffer.htm</a></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">O también se puede experimentar con la instruccion siguiente.</span></p>
+</td>
+<td style="width: 50%; text-align: justify;"><img src="img9.1.png" width="435" height="197" alt="data" /></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="arquitectura_de_oracle.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="manejo_de_procesos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
